@@ -1,0 +1,15 @@
+:root{
+    font-family: 'Source Code Pro';
+
+    --background: #282c34;
+    --primaryText: #ABB2BF;
+    --textHighlight: #C678DD;
+    --textDanger: #E06C75;
+    --textSuccess: #98C379;
+    --textWarning: #E5C07B;
+}
+
+.main{
+    background-color: var(--background);
+    color: var(--primaryText);
+}
