@@ -28,4 +28,22 @@ public class ApplicationController {
         return "6.html";
     }
 
+    @GetMapping("/7")
+    public String arraylists(){
+        return "7.html";
+    }
+
+    @GetMapping("/8")
+    public String arrays2d(){ return "8.html"; }
+
+    @GetMapping("/9")
+    public String inheritance(){
+        return "9.html";
+    }
+
+    @GetMapping("/10")
+    public String recursion(){
+        return "10.html";
+    }
+
 }
