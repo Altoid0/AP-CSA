@@ -4,12 +4,36 @@
     --background: #282c34;
     --primaryText: #ABB2BF;
     --textHighlight: #C678DD;
-    --textDanger: #E06C75;
+    --textDanger: #e06c75;
     --textSuccess: #98C379;
     --textWarning: #E5C07B;
 }
 
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: red;
+}
+
 .main{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -20px;
     background-color: var(--background);
     color: var(--primaryText);
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.units{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
