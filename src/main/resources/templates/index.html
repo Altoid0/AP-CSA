@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>FreeKashmir AP Computer Science A Hub</title>
-        <link href="/fonts.css" rel="stylesheet">
-        <link href="/main.css" rel="stylesheet">
-    </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/nav :: head"></head>
 
     <body>
 
         <div class="main">
+
+            <div th:replace="fragments/nav :: nav"></div>
 
             <div class="title">
                 <h1>AP Unit Review</h1>
@@ -34,10 +31,7 @@
                 <h3>Unit 10 [Recursion]</h3>
             </div>
 
-            <h4>About</h4>
-            <p>
-                Welcome to our Java hub! We are all part of the Free Kashmir CSA group from Del Norte High School. The goal of this site is to provide rising AP Computer Science A students with a reference point to follow when studying. From our own experience we know the whole journey can be intimidating and confusing with contradicting information from many sites, so fear not. Java Hub will guide you in learning and prioritizing your time and effort. The AP Computer Science class is built in a very unique way in that the College Board expectations are unusually low in certain aspects. This site will take you through all the necessities and help you make the most of the year.
-            </p>
+
 
         </div>
 
