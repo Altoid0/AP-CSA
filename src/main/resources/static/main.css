@@ -2,7 +2,7 @@
     font-family: 'Source Code Pro';
 
     --background: #282c34;
-    --primaryText: #ABB2BF;
+    --primaryText: #FFFFFF;
     --textHighlight: #C678DD;
     --textDanger: #e06c75;
     --textSuccess: #98C379;
@@ -26,7 +26,9 @@ html, body {
     height: auto !important;
     height: 100%;
     margin: 0 auto -20px;
-    background-color: var(--background);
+    /*background-color: var(--background);*/
+    background: rgb(2,0,36);
+    background: linear-gradient(161deg, rgba(2,0,36,1) 0%, rgba(86,197,150,1) 0%, rgba(32,80,114,1) 100%);
     color: var(--primaryText);
 
 }
