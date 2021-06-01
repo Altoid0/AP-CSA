@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head"></head>
 
-<h4>About</h4>
-<p>
-    Welcome to our Java hub! We are all part of the Free Kashmir CSA group from Del Norte High School. The goal of this site is to provide rising AP Computer Science A students with a reference point to follow when studying. From our own experience we know the whole journey can be intimidating and confusing with contradicting information from many sites, so fear not. Java Hub will guide you in learning and prioritizing your time and effort. The AP Computer Science class is built in a very unique way in that the College Board expectations are unusually low in certain aspects. This site will take you through all the necessities and help you make the most of the year.
-</p>
+<body>
+<div th:replace="fragments/fragments :: nav"></div>
+
+<div class="container">
+    <h4 class="centered">About</h4>
+</div>
+
+<div class="container">
+    <p class="centered">
+        Welcome to our Java hub! We are all part of the Free Kashmir CSA group from Del Norte High School. The goal of this site is to provide rising AP Computer Science A students with a reference point to follow when studying. From our own experience we know the whole journey can be intimidating and confusing with contradicting information from many sites, so fear not. Java Hub will guide you in learning and prioritizing your time and effort. The AP Computer Science class is built in a very unique way in that the College Board expectations are unusually low in certain aspects. This site will take you through all the necessities and help you make the most of the year.
+    </p>
+</div>
+
 
 
 </body>

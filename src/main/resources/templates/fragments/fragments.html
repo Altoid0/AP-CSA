@@ -6,6 +6,15 @@
     <title>FreeKashmir AP Computer Science A Hub</title>
     <link href="/fonts.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
+    <script>
+        console.log("test");
+        var time = 0;
+        setInterval(function () {
+            console.log("test");
+            document.documentElement.style.setProperty('--bgDeg', time + "deg");
+            time = (time % 360) + 5;
+        }, 50);
+    </script>
 </head>
 
 <body>
