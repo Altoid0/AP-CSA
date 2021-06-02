@@ -5,6 +5,102 @@
     <title>Unit 7 | ArrayList</title>
 </head>
 <body>
+<h1>Unit 7: ArrayLists</h1>
+
+<p>An ArrayList is a re-sizable array, also called a dynamic array. It grows its size to accommodate new elements and shrinks the size when the elements are removed. ArrayList internally uses an array to store the elements. Just like arrays, It allows you to retrieve the elements by their index.</p>
+
+<p> Insert a picture or gif of arraylist working</p>
+
+
+
+<h2> Creating an ArrayList</h2>
+<p> In order to create and ArrayList, the steps are a little different than for normal Arrays, we must first declare and ArrayList with the following command <code>ArrayList&lt;type&gt; varName = new ArrayList&lt;type&gt;();</code>.
+    In addition we must also specify the <code>type</code>, which cannot be primitive, so to have int type we must pass <code>Integer</code> and pass <code>Double</code> for double types.
+    If we want to use strings, set the type to <code>String</code>. The following code snippet below shows an example arraylist of student grades being initialized and values added.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+
+
+<h2>ArrayList Methods</h2>
+<p>Now we know how to create an ArrayList, but what can you actually do with Arraylists? Here we will be going over a few important methods that can be used on ArrayLists</p>
+<img src="static/JQR Arraylist.PNG" style="width:500px;height:600px;">
+
+<h3>Getting the Size of the ArrayList</h3>
+<p>With the <code>.size()</code> method, we can return the size of the ArrayList, or the number of elements in the ArrayList.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+<h3>Adding to an ArrayList</h3>
+<p>If we want to add to an ArrayList we can use the method <code>.add(E obj)</code>, where the object E is added and returns True.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+<h3>Inserting into an ArrayList</h3>
+<p>If we want to insert into an ArrayList, we can use the method <code>.add(int index, E obj)</code>, where the object E is inserted at position <code>index</code>, and all the elements previously at position <code>index</code>
+    and above are moved higher to the right and their indices are increased by 1, also adding 1 to the size.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+<h3>Getting From an ArrayList</h3>
+<p>If we want to get a value from an ArrayList, we can use the <code>.get(int index)</code> method, which returns the element at <code>index</code> in the ArrayList.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+<h3>Setting in an ArrayList</h3>
+<p>If we want to set an element already in the ArrayList, we can use the method <code>.set(int index, E obj)</code>, which replaces the
+    element at the position of <code>index</code> with the specified object <code>obj</code>, and returns the element that was previously in that position <code>index</code>.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+<h3>Removing From an ArrayList</h3>
+<p>If we want to remove an element from and ArrayList, we can use the <code>.remove(int index)</code> method, which removes the element from <code>index</code>
+    and moves all elements higher than index to the left and subtracts 1 from the size of the Arraylist.</p>
+<pre>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+    <code>Some Code Here</code>
+</pre>
+
+
+<h2> Example Repl.it</h2>
+
+<h2> Additional Resources</h2>
+<a href="https://www.geeksforgeeks.org/arraylist-in-java/">The Geeks for Geeks Page for ArrayLists</a>
+<br>
+<br>
+<a href="https://www.w3schools.com/java/java_arraylist.asp">The W3Schools Page for ArrayLists</a>
+<br>
+<br>
+<a href="https://www.youtube.com/watch?v=n_1_hVYQifY">In Depth Youtube Video on ArrayLists</a>
 
 </body>
 </html>
