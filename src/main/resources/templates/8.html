@@ -5,6 +5,97 @@
     <title>Unit 8 | 2D Array</title>
 </head>
 <body>
+<h1>Unit 8: 2D Array</h1>
 
+<p>A 2D is a type of multidimensional array that can be thought as a grid that has multiple arrays inside of an array. It is more complex than a normal array as it requires two index values to retrieve an element.</p>
+
+<p> Insert a picture or gif of 2D array working</p>
+
+
+
+<h2> Creating an 2D Array</h2>
+<p> In order to create 2D Array, the steps are a little different than for normal Arrays or ArrayLists, we must first declare a 2D Array with the following command <code>type[][] name = new type[rows][columns];</code>.
+    In addition we must also specify the <code>type</code>, which can be any type such as <code>double, int, String, or char</code>. We must also specify the number of rows that we want in the 2D Array as well as the number of columns in the 2D Array.</p>
+
+<p>Here are some examples:</p>
+<pre>
+    <code>double[][] doubleGrid = new double[2][4];</code>
+    <br>
+    <code>String[][] stringGrid = new String[5][6];</code>
+    <br>
+    <code>char[][] charGrid = new char[6][10];</code>
+    <br>
+    <code>int[][] intGrid = new int[3][3];</code>
+    <br>
+    <code>int[][] gameBoard = {</code>
+    <code>  {1, 0, 2},</code>
+    <code>  {0, 1, 2},</code>
+    <code>  {0, 0, 1},</code>
+    <code>};</code>
+
+</pre>
+
+
+
+<h2>2D Array Operations</h2>
+<p>Here are some basic operations that we can do with 2D Arrays and parsing them.</p>
+<img src="static/JQR Arraylist.PNG" style="width:500px;height:600px;">
+
+<h3>Understanding What 2D Arrays Look Like</h3>
+<p>Here is a basic layout of what an expanded 2D Array looks like.</p>
+<table style="width:15%">
+    <tr>
+        <th>Row/Col</th>
+        <th>0</th>
+        <th>1</th>
+        <th>2</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+</table>
+
+
+<h3>Getting an Element</h3>
+<p>Let's say we want to access a specific element of our grid. For this, we use: <code>int elem = grid[row][col];</code>. With that said, we want to grab the element in the middle of the grid. So we would use: <code>int elem = gameBoard[1][1];</code>, which would give us a 1. Now, we want to get the element in the top right corner of the canvas.
+    In this case, we use: <code>int elem = gameBoard[2][0];</code> and we get 2.</p>
+
+
+<h3>Setting and Element</h3>
+<p>In order to set an element of a grid we use: <code>grid[row][col] = elem;</code>. If we wanted to make O the winner of our game we would have to set the elements at (0, 0) and (0, 1) to 2. In order to do this we would use:</p>
+<pre>
+    <code>gameBoard[0][0] = 2; </code>
+    <code>gameBoard[0][1] = 2; </code>
+</pre>
+
+<h3>Getting a Row</h3>
+<p>Finally, to get a specific row of a grid, we use <code>int[] row = grid[row];</code>. If were were to access the values in the 2nd row of our board, we would use <code>int[] 2ndRow = gameBoard[1];</code>.</p>
+
+
+<h2> Example Repl.it</h2>
+
+<h2> Additional Resources</h2>
+<a href="https://www.geeksforgeeks.org/multidimensional-arrays-in-java/">The Geeks for Geeks Page for 2D Arrays</a>
+<br>
+<br>
+<a href="https://www.w3schools.com/java/java_arrays.asp">The W3Schools Page for 2D Arrays</a>
+<br>
+<br>
+<a href="https://www.youtube.com/watch?v=DYEYzvgowXc&t=217s">In Depth Youtube Video on 2D Arrays</a>
 </body>
 </html>
