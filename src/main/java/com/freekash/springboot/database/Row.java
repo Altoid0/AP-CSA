@@ -37,15 +37,6 @@ public class Row {
     private String name;
 
     @NonNull
-    @Size(min = 2, max = 100, message = "Link")
-    private String link;
-
-    // Mastery is restricted
-    @NonNull
-    @Min(1) @Max(10)
-    private Integer unit;
-
-    @NonNull
-    @Size(min = 2, max = 1000, message = "Text")
-    private String text;
+    @Size(min = 2, max = 1000, message = "Comment")
+    private String comment;
 }
