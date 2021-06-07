@@ -23,7 +23,7 @@ The last annotation connect to database
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
-public class Row {
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

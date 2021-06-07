@@ -12,20 +12,20 @@ This class is an instance of Java Persistence API (JPA)
 */
 @Service
 @Transactional
-public class DatabaseSqlRepository {
+public class CommentSqlRepository {
 
     @Autowired
-    private DatabaseJpaRepository jpa;
+    private CommentJpaRepository jpa;
 
-    public List<Row> listAll() {
+    public List<Comment> listAll() {
         return jpa.findAll();
     }
 
-    public void save(Row player) {
+    public void save(Comment player) {
         jpa.save(player);
     }
 
-    public Row get(long id) {
+    public Comment get(long id) {
         return jpa.findById(id).get();
     }
 
