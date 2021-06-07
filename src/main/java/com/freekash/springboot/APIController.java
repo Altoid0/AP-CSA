@@ -1,32 +1,33 @@
 package com.freekash.springboot;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.freekash.springboot.database.Comment;
+import com.freekash.springboot.database.CommentSqlRepository;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class APIController {
 
-    @GetMapping("/test")
-    public String test(){
-        return "index.html";
-    }
+    @Autowired
+    private CommentSqlRepository commentSqlRepository;
 
     @RequestMapping(value = "/comments")
-    public ResponseEntity<String> getAllPosts(){
-        JSONObject object = new JSONObject();
-        object.put("link", "test_data");
-        object.put("unit", 1);
-        JSONArray arr = new JSONArray();
-        arr.add(object);
-        return new ResponseEntity<>(arr.toJSONString(), HttpStatus.OK);
+    public ResponseEntity<Object> getAllPosts(){
+        return new ResponseEntity<>(commentSqlRepository.listAll(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/comments", method = RequestMethod.POST)
+    public ResponseEntity<Object> createComment(@RequestParam("name") String name, @RequestParam("body") String body){
+        Comment comment = new Comment(name, body);
+        commentSqlRepository.save(comment);
+        return new ResponseEntity<>(comment, HttpStatus.OK);
     }
 
 }

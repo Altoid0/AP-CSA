@@ -21,7 +21,6 @@ The last annotation connect to database
 @Getter
 @ToString
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Entity
 public class Comment {
     @Id
@@ -39,4 +38,17 @@ public class Comment {
     @NonNull
     @Size(min = 2, max = 1000, message = "Comment")
     private String comment;
+
+    public Comment(String name, String comment){
+        this.name = name;
+        this.comment = comment;
+    }
+
+    public String getCommentBody(){
+        return comment;
+    }
+
+    public String getCommentAuthor(){
+        return name;
+    }
 }
