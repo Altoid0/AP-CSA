@@ -44,11 +44,4 @@ public class Comment {
         this.comment = comment;
     }
 
-    public String getCommentBody(){
-        return comment;
-    }
-
-    public String getCommentAuthor(){
-        return name;
-    }
 }

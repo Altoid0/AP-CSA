@@ -11,6 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 @RestController
 @RequestMapping("/api")
 public class APIController {
@@ -19,8 +22,15 @@ public class APIController {
     private CommentSqlRepository commentSqlRepository;
 
     @RequestMapping(value = "/comments")
-    public ResponseEntity<Object> getAllPosts(){
-        return new ResponseEntity<>(commentSqlRepository.listAll(), HttpStatus.OK);
+    public ResponseEntity<Object> getAllPosts(@RequestParam(value = "name", required = false) String authorName){
+        Stream<Comment> comments = commentSqlRepository.listAll().stream();
+        if(authorName != null)
+             comments = comments.filter(comment -> {
+                if(comment.getCommentAuthor().toLowerCase().equals(authorName.toLowerCase()))
+                    return true;
+                return false;
+            });
+        return new ResponseEntity<>(comments, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/comments", method = RequestMethod.POST)
