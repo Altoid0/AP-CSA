@@ -1,10 +1,13 @@
 package com.freekash.springboot;
 
+import com.freekash.springboot.database.CommentSqlRepository;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -58,5 +61,14 @@ public class ApplicationController {
         return "10.html";
     }
 
+
+    @Autowired
+    private CommentSqlRepository commentSqlRepository;
+
+    @GetMapping("/comments")
+    public String comments(Model model){
+        model.addAttribute("comments", commentSqlRepository.listAll());
+        return "comments.html";
+    }
 
 }
