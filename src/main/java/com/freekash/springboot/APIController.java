@@ -26,7 +26,7 @@ public class APIController {
         Stream<Comment> comments = commentSqlRepository.listAll().stream();
         if(authorName != null)
              comments = comments.filter(comment -> {
-                if(comment.getCommentAuthor().toLowerCase().equals(authorName.toLowerCase()))
+                if(comment.getName().toLowerCase().equals(authorName.toLowerCase()))
                     return true;
                 return false;
             });
