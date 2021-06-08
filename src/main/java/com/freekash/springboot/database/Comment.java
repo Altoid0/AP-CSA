@@ -44,4 +44,7 @@ public class Comment {
         this.comment = comment;
     }
 
+    public String getCommentAuthor () {
+        return this.name;
+    }
 }
