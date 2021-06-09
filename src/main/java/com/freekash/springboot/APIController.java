@@ -11,6 +11,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import javax.validation.Valid;
+import java.util.List;
+
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -33,11 +43,21 @@ public class APIController {
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/comments", method = RequestMethod.POST)
-    public ResponseEntity<Object> createComment(@RequestParam("name") String name, @RequestParam("body") String body){
+    /*@RequestMapping(value = "/commentcreate", method = RequestMethod.POST)
+    public ResponseEntity<Object> createComment(@RequestParam(value = "name") String name, @RequestParam(value = "body") String body){
         Comment comment = new Comment(name, body);
         commentSqlRepository.save(comment);
         return new ResponseEntity<>(comment, HttpStatus.OK);
-    }
+    }*/
 
+    /*@GetMapping("/commentcreate")
+    public String commentCreate(@RequestParam(value = "name") String name, @RequestParam(value = "body") String body, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "comments.html";
+        }
+        Comment c = new Comment(name, body);
+        commentSqlRepository.save(c);
+        // Redirect to next step
+        return "comments.html";
+    }*/
 }

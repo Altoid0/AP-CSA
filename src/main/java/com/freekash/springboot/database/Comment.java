@@ -36,12 +36,12 @@ public class Comment {
     private String name;
 
     @NonNull
-    @Size(min = 2, max = 1000, message = "Comment")
-    private String comment;
+    @Size(min = 2, max = 1000, message = "Body")
+    private String body;
 
     public Comment(String name, String comment){
         this.name = name;
-        this.comment = comment;
+        this.body = comment;
     }
 
 }

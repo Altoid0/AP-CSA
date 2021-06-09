@@ -11,6 +11,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.freekash.springboot.database.Comment;
+import org.springframework.web.bind.annotation.*;
+
+
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import javax.validation.Valid;
+import java.util.List;
+
+import java.util.List;
+import java.util.stream.Stream;
+
 @Controller
 public class ApplicationController {
     @GetMapping("/")
@@ -71,4 +88,14 @@ public class ApplicationController {
         return "comments.html";
     }
 
+    @PostMapping("/comments")
+    public String playerSave(@Valid Comment comment, BindingResult bindingResult) {
+        // Validation of Decorated PlayerForm attributes
+        if (bindingResult.hasErrors()) {
+            return "comments";
+        }
+        commentSqlRepository.save(comment);
+        // Redirect to next step
+        return "redirect:/";
+    }
 }
