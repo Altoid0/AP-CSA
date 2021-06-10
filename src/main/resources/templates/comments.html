@@ -5,14 +5,26 @@
 <body>
 <div th:replace="fragments/fragments :: nav"></div>
 
-<div th:each="comment: ${comments}">
-    <p th:text="${comment.name}"></p>
-    <p th:text="${comment.comment}"></p>
+<div th:each="comment: ${comments}" style="margin-left: 100px; margin-right: 100px">
+    <p><strong th:text="${comment.name}" style="text-align: left"></strong></p>
+    <p th:text="${comment.body}" style="text-align: left"></p>
 </div>
 
 
-<form>
-
+<form action="#" th:action="@{/comments}" th:object="${comment}" method="POST" style="margin-left: 100px; margin-right: 100px">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:name="name" field="name" /></td>
+            <!--<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>-->
+       </tr>
+       <tr>
+           <td>Comment body:</td>
+           <td><input type="text" th:name="body" field="body" style="height: 200px" /></td>
+           <!--<td th:if="${#fields.hasErrors('body')}" th:errors="*{body}">Text error</td>-->
+        </tr>
+    </table>
+    <button type="submit" class="centered" style="width: 50px">Add</button>
 </form>
 
 

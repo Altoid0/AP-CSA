@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Unit 5 | Classes</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
+<!-- https://www.cs.cmu.edu/~mrmiller/15-110/Handouts/writingClasses.pdf -->
+<!-- https://codehs.gitbooks.io/apjava/content/Classes-And-Object-Oriented-Programming/writing-classes.html -->
+<!-- https://runestone.academy/runestone/books/published/csjava/Unit6-Writing-Classes/toctree.html -->
+<head th:replace="fragments/fragments :: head"></head>
+
+<body>
+<div th:replace="fragments/fragments :: nav"></div>
+    <h1>Unit 5 [Writing Classes]</h1>
+
+    <h3>Public vs Private Classes & Variables</h3>
+    <p>For the sake of our course all Java classes should be public and variables directly inside the class should be private. Private variables inside the class are called instance variables.</p>
+
+    <h3>Static Variables</h3>
+    <p>Static variables are variables that get shared by all objects of the class. What that means is if we have a static variable in the class called lot and every time a new object is created we increase the value of lot by 1, the lot variables in every object will also be incremented by 1 therefore have the same value. The important thing to remember here is that there aren't duplicates of the lot variable that all happen to have the same behavior. Instead, all object of that class literally share the same variable.</p>
+
+    <h3>Constructors</h3>
+    <p>The constructor is a function which has the same name as the class and gets executed when an object is created. Every class must have a constructor, if you don't see one in a class fear not because Java makes a default constructor behind the scenes (which is pretty much empty) meaning instance variables retain their default values (0, null, etc..). If you didn't catch it by now, the purpose of a constructor is to assign values to instance variables. We can have multiple constructors in the same class as long as they take a different number of arguments (inputs) or different type of arguments than another constructor.</p>
+
+    <pre>
+    <code>
+    public class Name {
+        private static String var;
+        private String test;
+        private int test2;
+    </code>
+    </pre>
+    <p>Having multiple constructors is called overloading.</p>
+    <pre>
+    <code>
+        public Name(String testval, int testval2){
+            test = testval;
+            test2 = testval2;
+        }
+    </code>
+    </pre>
+
+    <p>Note that even though the constructor is only made for String we can declare what the value of test2 will default to if not specified. This is not required as if we don't set it, test2 will just remain its default initialized value.</p>
+    <pre>
+    <code>
+        public Name(String testval){
+            test = testval;
+            test2 = 2;
+        }
+    </code>
+    </pre>
+
+    <p>When we create an object and supply it arguments Java will automatically take those arguments and pass it to the correct constructor. Supposed we created the following object</p>
+    <pre>
+    <code>Name myobj = new name("mystring", 12);</code>
+    </pre>
+    <p>Java sees the string and int parameters and matches this up with the first constructor we had above. test will be set to "mystring" and test2 will be set to 12</p>
+
+    <h3>Static and Non-Static Methods</h3>
+    <p>Methods are just functions (Java prefers to call them methods). Static methods only have the ability to interact with static instance variables and variables created inside the method. Non-static methods interact with non-static instance variables and other variables created inside the method, though they can also access static variables. Just like constructors methods take input in the form of arguments. Usually we have 2 main roles for methods. The first is called a getter, this is a method which when called returns the value of one of the instance variables. Setters are another type of method and they are responsible for taking input and assigning it to an instance variable or using it to manipulate the instance variable in some way. Sometimes people also refer to these as accessors and mutators.</p>
+
+    <pre>
+    <code>
+        public String getTest(){
+            return test;
+        }
+
+        public int test2(int newVal){
+            test2 = newVal;
+        }
+    </code>
+    </pre>
 </body>
 </html>

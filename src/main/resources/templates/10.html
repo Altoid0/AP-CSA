@@ -3,8 +3,132 @@
 <head th:replace="fragments/fragments :: head"></head>
 
 <body>
+<h1>Unit 10: Recursion</h1>
+<p>Though Recursion may be a little confusing, essentially it is when a method calls itself repeatedly to solve a certain problem.
+    There are some issues that can only be solved using recursion, and there are times when recursion is the most effective method of solving a problem.</p>
+<img src="/part-1.jpg" style="width:50%;height:50%;">
 
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@EyaadMir/AP-CSA-Training?lite=false"></iframe>
 
+
+<h2>Parts of a Recursive Method</h2>
+<h3>Base Case:</h3>
+<p>The <b>Base Case</b> is the terminating case that is in a recursive problem. This case does not use recursion, and is simply a condition that causes the method to terminate.
+Without a base case, the recursive method would continue forever.</p>
+<h3>Recursive Case:</h3>
+<p>The <b>Recursive Case</b> is the set of steps that decrements as the <b>Recursive Algorithm</b> gets closer and closer to the <b>Base Case</b> </p>
+<h3>Recursive Algorithm:</h3>
+<p>The <b>Recursive Algorithm</b> is a finite set of steps that will call upon itself with simpler input values,
+    this algorithm will eventually reach the <b>Base Base</b>.</p>
+
+
+
+<h2>Examples of Recursion</h2>
+<h3>Factorials</h3>
+<p>One commonly used way of using recursion is to solve for factorials, here is an example:</p>
+<pre>
+    <code>private int factorial(int n)</code>
+    <code></code>
+    <code>{</code>
+    <code></code>
+    <code>  int res = 1;</code>
+    <code></code>
+    <code>  for(int i = n; i > 0; i--)</code>
+    <code></code>
+    <code>  {</code>
+    <code></code>
+    <code>      res *= i;</code>
+    <code></code>
+    <code>  }</code>
+    <code></code>
+    <code>  return res;</code>
+    <code></code>
+    <code>}</code>
+</pre>
+<h3>Fibonnaci</h3>
+<p>Another Common use case for recursion is to create a fibonacci sequence generating algorithm, here is an example:</p>
+<pre>
+    <code>private int fibonacci(int num)</code>
+    <code></code>
+    <code>{</code>
+    <code></code>
+    <code>  // Base Case</code>
+    <code></code>
+    <code>  if(num == 0 || num == 1)</code>
+    <code></code>
+    <code>  {</code>
+    <code></code>
+    <code>      return 1;</code>
+    <code></code>
+    <code>  }</code>
+    <code></code>
+    <code>  // Recursive Function</code>
+    <code></code>
+    <code>  return fibonacci(num-1) + fibonacci(num-2);</code>
+    <code></code>
+    <code>}</code>
+</pre>
+
+
+
+<h2>Searches</h2>
+<h3>Binary Search</h3>
+<li>This is a much more efficient way of searching as it starts at the middle and decides to look for the greater half or the lesser half compared to the value that is being searched for</li>
+<li>However the array must be organized in some way or the search will not work</li>
+<li>Returns the index of the value that is searched for</li>
+<p>Example:</p>
+<pre>
+    <code>int binarySearch(int arr[], int l, int r, int x) { </code>
+    <code></code>
+    <code>  if (r >= l) { </code>
+    <code></code>
+    <code>      if (arr[mid] == x)</code>
+    <code></code>
+    <code>          return mid;</code>
+    <code></code>
+    <code>      if (arr[mid] > x)</code>
+    <code></code>
+    <code>          return binarySearch(arr, l, mid - 1, x);</code>
+    <code></code>
+    <code>      return binarySearch(arr, mid + 1, r, x);</code>
+    <code></code>
+    <code>  }</code>
+    <code></code>
+    <code>  return -1;</code>
+    <code></code>
+    <code>}</code>
+</pre>
+
+<h3>Sequential Search</h3>
+<li>The algorithm searches through each value in the array until the value is either found or it reaches the end of the array</li>
+<li>An enhanced for loop can be used ONLY if you are spanning the entire array and not just a part of it</li>
+<li>Returns the index of the value that is searched for</li>
+<p>Example:</p>
+<pre>
+    <code>for (int i = 0; nums.length(); i++) { </code>
+    <code></code>
+    <code>  if (nums[i] == target) { </code>
+    <code></code>
+    <code>    return ("Found at " + i);</code>
+    <code></code>
+    <code>  }</code>
+    <code></code>
+    <code>}</code>
+</pre>
+
+
+
+<h2>Example Repl.it</h2>
+<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@EyaadMir/AP-CSA-Unit-10?lite=true"></iframe>
+
+
+
+<h2> Additional Resources</h2>
+<a href="https://www.geeksforgeeks.org/recursion/">The Geeks for Geeks Page for Recursion</a>
+<br>
+<br>
+<a href="https://www.w3schools.com/java/java_recursion.asp">The W3Schools Page for Recursion</a>
+<br>
+<br>
+<a href="https://www.youtube.com/watch?v=neuDuf_i8Sg">In Depth Youtube Video on Recursion</a>
 </body>
 </html>

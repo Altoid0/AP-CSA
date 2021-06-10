@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Unit 4 | Iteration</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- https://www.programiz.com/java-programming/for-loop -->
+<!-- https://www.w3schools.com/java/java_for_loop.asp -->
+<!-- https://www.javatpoint.com/java-for-loop -->
+<head th:replace="fragments/fragments :: head"></head>
+
 <body>
+<div th:replace="fragments/fragments :: nav"></div>
     <h1>Unit 4 [Iteration]</h1>
 
     <h3>Comparing while loops to for loops</h3>
@@ -18,10 +20,36 @@
     </pre>
 
     <h3>Foreach loops (Enhanced for loops)</h3>
-    <p></p>
+    <p>The important thing to know about foreach loops is that they do not use indexes. Instead the variable i gets assigned to a variable inside the array and after that iteration is complete i will be set equal to the next element in the array. Since element values are being assigned to i we cannot manipulate i in order to modify an element within the array. For this reason only use foreach loops when you need to iterate the full length of an array and don't need to modify its content.</p>
     <pre>
     <code>for(int i : arrayofnumbers){</code>
     <code>// i is set to a number in the array each time}</code>
     </pre>
+    <p>It is worth noting that you don't have to iterate a collection of primitive type objects you can also iterate through an arraylist of any type you want.</p>
+
+    <h3>Counting Iterations</h3>
+    <p>If the center argument is <b>i &lt; some number</b> we can do: <b>some number - initial i value [10-0 = 10]</b></p>
+    <pre>
+    <code>for(int i = 0; i < 10; i++){}</code>
+    </pre>
+    <p>If the middle argument has an <b>“or equal to”</b> operator then do the same as above but <b>add 1 to the final number</b> [10-0 = 10+1 = 11]</p>
+
+    <h3>Nested Iteration</h3>
+    <p>To find out how many times statement 1 will execute multiply the amount of times the outer loop will execute by the inner [10*5 = 50]</p>
+    <pre>
+    <code>for(int i = 0; i < 10; i++){</code>
+        <code>for(int i = 0; i < 5; i++){</code>
+            <code>//Statement 1</code>
+        <code>}</code>
+    <code>}</code>
+    </pre>
+
+    <h3>Gotta Know Algorithms</h3>
+    <h4>Finding a substring</h4>
+    <img src="/SubString.PNG">
+    <h4>Counting number of occurrences</h4>
+    <img src="Counter.PNG">
+    <h4>Reversing a string</h4>
+    <img src="Reverse.PNG">
 </body>
 </html>
