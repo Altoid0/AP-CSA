@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head"></head>
+
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<div th:replace="fragments/fragments :: nav"></div>
+
+<div id="content-root"></div>
+
+
+<script>
+
+        const MARKDOWN_API = "https://api.github.com/markdown/raw";
+        const DATA_URL = "https://raw.githubusercontent.com/Altoid0/AP-CSA/master/README.md";
+
+        const main = async()=>{
+
+            const markdownResponse = await fetch(DATA_URL);
+            const markdownData = await markdownResponse.text();
+
+            console.log(markdownData);
+
+            const htmlResponse = await fetch(MARKDOWN_API, {method:"POST", body:markdownData});
+            const htmlData = await htmlResponse.text();
+
+            $("#content-root").append(htmlData);
+            console.log(htmlData);
+
+        }
+
+        main();
+
+
+    </script>
+</body>
+
+</html>

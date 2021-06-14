@@ -35,12 +35,17 @@ public class ApplicationController {
         return "index.html";
     }
 
-    @GetMapping("about")
+    @GetMapping("/how")
+    public String how(){
+        return "how.html";
+    }
+
+    @GetMapping("/about")
     public String about(){
         return "about.html";
     }
 
-    @GetMapping("minilabs")
+    @GetMapping("/minilabs")
     public String minilabs() { return "minilabs.html"; }
 
     @GetMapping("/misc")
