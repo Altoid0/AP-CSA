@@ -5,13 +5,32 @@
 <body>
 <div th:replace="fragments/fragments :: nav"></div>
 
-<div th:each="comment: ${comments}" style="margin-left: 100px; margin-right: 100px">
-    <p><strong th:text="${comment.name}" style="text-align: left"></strong></p>
+<h1>Comments</h1>
+
+<div th:each="comment: ${comments}" class="thread">
     <p th:text="${comment.body}" style="text-align: left"></p>
+    <small class="author">By: <i th:text="${comment.name}"></i></small>
+    <div th:each="reply: ${comment.replies}" class="reply">
+        <p th:text="${reply.body}" class="reply__text"></p>
+        <small class="author">By: <i th:text="${reply.name}"></i></small>
+    </div>
+
+    <hr />
+
+    <div>
+        <form method="post" action="/api/replies">
+            <legend>Reply...</legend>
+            <input type="t" th:name="name" placeholder="name" required>
+            <textarea th:name="body" placeholder="text" required></textarea>
+            <input type="hidden" th:value="${comment.id}" th:name="comment"/>
+            <input type="submit">
+        </form>
+    </div>
 </div>
 
 
 <form action="#" th:action="@{/comments}" th:object="${comment}" method="POST" style="margin-left: 100px; margin-right: 100px">
+    <p>Add a comment!</p>
     <table>
         <tr>
             <td>Name:</td>
@@ -20,7 +39,7 @@
        </tr>
        <tr>
            <td>Comment body:</td>
-           <td><input type="text" th:name="body" field="body" style="height: 200px" /></td>
+           <td><input type="text" th:name="body" field="body" /></td>
            <!--<td th:if="${#fields.hasErrors('body')}" th:errors="*{body}">Text error</td>-->
         </tr>
     </table>
@@ -29,4 +48,37 @@
 
 
 </body>
+
+<style>
+
+    .thread{
+        width: 400px;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .reply{
+        margin-left: 100px;
+    }
+
+    .author{
+        width: 100%;
+        text-align: right;
+    }
+</style>
+
+<script>
+    $('.reply-form').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: '/api/replies',
+            type: 'post',
+            data:$('#myForm').serialize(),
+            success:function(){
+                // Whatever you want to do after the form is successfully submitted
+            }
+        });
+    });
+</script>
 </html>

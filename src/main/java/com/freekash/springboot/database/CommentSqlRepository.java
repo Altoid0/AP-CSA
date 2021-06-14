@@ -17,7 +17,8 @@ public class CommentSqlRepository {
     @Autowired
     private CommentJpaRepository jpa;
 
-    public List<Comment> listAll() {
+
+    public List<Comment> listAllComments() {
         return jpa.findAll();
     }
 

@@ -87,7 +87,7 @@ public class ApplicationController {
 
     @GetMapping("/comments")
     public String comments(Model model){
-        model.addAttribute("comments", commentSqlRepository.listAll());
+        model.addAttribute("comments", commentSqlRepository.listAllComments());
         return "comments.html";
     }
 
