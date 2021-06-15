@@ -40,11 +40,6 @@ public class ApplicationController {
         return "how.html";
     }
 
-    @GetMapping("/about")
-    public String about() {
-        return "about.html";
-    }
-
     @GetMapping("/misc")
     public String misc() {
         return "misc.html";
