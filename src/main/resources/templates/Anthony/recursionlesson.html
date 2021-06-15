@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <title>Recursion Lesson | Anthony</title>
 </head>
+<head th:replace="fragments/fragments :: head"></head>
 
 <body>
+<div th:replace="fragments/fragments :: nav"></div>
+
 <h1>Recursion Lesson</h1>
 <p>A step by step walkthrough of a recursive function. Input a number to find what its corresponding term in the Fibonacci sequence is. The function repeats steps as it runs multiple threads. Since the function calls itself, steps for branching threads will also be shown. For example, running the function with a size of 5 will show the steps for calling the function with values of 3, 2, and 1.</p>
 
