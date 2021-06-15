@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crossover API</title>
+    <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
+</head>
+<head th:replace="fragments/fragments :: head"></head>
+
+<body>
+<div th:replace="fragments/fragments :: nav"></div>
+
+<h1>Booleans API Crossover Use</h1>
+<br>
+<input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
+<p id="showData"></p>
+
+</body>
+
+
+<script>
+    function CreateTableFromJSON() {
+        var myBooks = [{"id":1,"name":"Collect briefing document.","description":"Set up first meeting with client. Collect basic data about the client. Define and collect briefing document from client.","date":[2021,5,6],"creatorName":"Mark","owner":"Mark","completed":true},{"id":2,"name":"Define project questionnaire.","description":"Define and send project questionnaire to the client and wait for the client's response. Iterate on doubts you have until everybody is in agreement. Finalize project questionnaire from client.","date":[2021,5,16],"creatorName":"Ann","owner":"Ann","completed":true},{"id":3,"name":"Research client's company and industry.","description":"Research client's company to understand their brand, the way they communicate, their demographics, target audience. Research client's industry to find ways of communicating specifically to the industry, strengths and weaknesses, trends and other industry specifics.","date":[2021,5,26],"creatorName":"Ralf","owner":"Ralf","completed":true},{"id":4,"name":"Get quotation for project.","description":"Get quotation for development effort for project. Estimate design work with designers. Get quotation for copy/content or estimate work with your copywriters.  Get quotation for photography and video production or estimate effort involved.","date":[2021,6,5],"creatorName":"Kate","owner":"Kate","completed":true},{"id":5,"name":"Get quotation for hosting and domain.","description":"Get quotation for hosting and domain, particularly if specialized hosting is involved such as VPS hosting, cloud hosting, or special hosting or environment requirements.","date":[2021,6,10],"creatorName":"Manager","owner":"Manager","completed":false},{"id":6,"name":"Check the quality of each content element.","description":"Quality assure each piece of content you have outsourced or bought – and ask for changes where necessary. Populate the website content with the various content items you have agreed with the client.","date":[2021,6,13],"creatorName":"Manager","owner":"Manager","completed":false},{"id":7,"name":"Define a Contact Us page and social media details.","description":"Define a Contact Us page with correct client details and a map. Populate links and icongraphy with links to relevant social media details. Create a link to your website in the footer (make sure it has been agreed with the client to do so).","date":[2021,6,14],"creatorName":"Manager","owner":"Manager","completed":false},{"id":8,"name":"Check all web copy writing.","description":"Make sure web copywriting has been proofread and ran through a spelling and grammar checker to check for correctness. Use online tools such as Reverso, or Spellcheckplus.com. Check that generic content, such as lorem ipsum, has been properly removed and replaced.","date":[2021,6,15],"creatorName":"Manager","owner":"Manager","completed":false},{"id":9,"name":"Check all images and videos.","description":"See that all images are in the correct places, smushed, formatted, width and height specified and working on all devices. Confirm that videos and audio files are in the correct places, formatted and working on all devices.","date":[2021,6,16],"creatorName":"Manager","owner":"Manager","completed":false},{"id":10,"name":"Check all linked content.","description":"Test all linked content, such as case studies, ebooks, and whitepapers, and verify that they are correctly linked. Test to see that all internal links across web pages are working properly. Ensure that company logo is linked to the homepage.","date":[2021,6,17],"creatorName":"Manager","owner":"Manager","completed":false},{"id":11,"name":"Check Contact Us and other Forms.","description":"Ensure that Contact Us and other forms are submitting data properly. If the form is sent to an email address ensure that email is received on a mailbox that is monitored, or ensure that content is correctly stored in your database. Verify the Thank-you message or page displayed after form is submitted. Check that Auto-responders are working properly and text in emails has been proofed.","date":[2021,6,18],"creatorName":"Kate","owner":"Kate","completed":false},{"id":12,"name":"Check all external links.","description":"External links across web pages are working properly, and open in a new tab (Fix any broken links using this tool). Ensure that Social media share icons are working properly – that there is a good image for sharing and that the description for sharing is appropriate. Correct your metadata as necessary to ensure social media sharing is working ok.","date":[2021,6,19],"creatorName":"Ann","owner":"Ann","completed":false},{"id":13,"name":"Check the 404 page and redirects.","description":"Try a non-existing address on your page to check the 404 page and 404 redirect pages are in place. Choose www vs no-www and make sure that ONLY one of them is working to ensure you don't get penalized for duplicate content. After choosing one, make sure one redirects to the other.","date":[2021,6,20],"creatorName":"Ralf","owner":"Ralf","completed":false},{"id":14,"name":"Check if website is mobile-friendly.","description":"Make sure that viewport meta tag is used. Check that  website is mobile-friendly with at least a MobileOk score of 75. Check if Google sees your page as Mobile-Friendly. Make sure that correct input types for email, phone and URL input form fields are used to ensure these are rendered correctly on mobile phones.","date":[2021,6,21],"creatorName":"Manager","owner":"Manager","completed":false},{"id":15,"name":"Test website on emulators and real devices.","description":"Check how the site looks on emulators such as ipadpeek, screenfly, mobilephonesimulator. Test the site using real devices you have accessible to you or use opendevicelab.com.","date":[2021,6,23],"creatorName":"Manager","owner":"Manager","completed":false},{"id":16,"name":"Check page titles, meta descriptions and keywords.","description":"Check that all pages have unique page titles (with a recommended length of fewer than 70 characters, including any keywords). Check that all pages have unique meta descriptions (with a recommended length of fewer than 156 characters, including keywords). Verify that pages have your chosen keywords included without any keyword stuffing (do not over-emphasize particular keywords).","date":[2021,6,25],"creatorName":"Manager","owner":"Manager","completed":false},{"id":17,"name":"Check page URLs.","description":"See that all page URLs consistently reflect site information architecture. If you have had another older website, make sure you have 301 redirects in place for all old URLs (redirecting old pages to new ones).","date":[2021,6,27],"creatorName":"Manager","owner":"Manager","completed":false},{"id":18,"name":"Minify and optimize files.","description":"Minify javascript and CSS files. Optimize the size of images and replace the existing images with the optimized images. Specify image dimensions for each image. Enable gzip compression on your hosting server.","date":[2021,6,29],"creatorName":"Manager","owner":"Manager","completed":false},{"id":19,"name":"Register social media properties.","description":"Create cover images for Social Media such as Facebook, Twitter, LinkedIn company page, Pinterest, Instagram or others as necessary. Register all social media properties and get them set up with profile images, cover pages, links back to the website.","date":[2021,7,1],"creatorName":"Manager","owner":"Manager","completed":false},{"id":20,"name":"Send the finished site to the client.","description":"Send the finished site to the client and get feedback. Fix and change any requests by client. Give access to client to all accounts created on their behalf. Send updates to client and wait for client sign-off.","date":[2021,7,3],"creatorName":"Manager","owner":"Manager","completed":false}]
+
+        // EXTRACT VALUE FOR HTML HEADER.
+        // ('id', 'name', 'Category' and 'Price')
+        var col = [];
+        for (var i = 0; i < myBooks.length; i++) {
+            for (var key in myBooks[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < myBooks.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = myBooks[i][col[j]];
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+</script>
+</html>
