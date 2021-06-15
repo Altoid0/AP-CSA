@@ -1,0 +1,107 @@
+https://secure-media.collegeboard.org/apc/ap18-frq-computer-science-a.pdf
+https://secure-media.collegeboard.org/ap/pdf/ap18-sg-comp-sci-a.pdf
+
+Q1a:
+public boolean simulate(){
+	int distance = 0;
+	int hops = 0;
+	while(distance < goalDistance){
+		if(hops > maxHops || hops < 0) return false;
+		distance += hopDistance();
+		hops++;
+	}
+	return true;
+}
+
+Q1b:
+public double runSimulations(int num){
+	boolean success = 0;
+	for(int i=0; i<num; i++){
+		boolean res = simulate();
+		if(res){
+			success++;
+		}
+	}
+	return success/num;
+}
+
+Q2a:
+public WordPairList(String[] words){
+	
+	allPairs = new ArrayList<WordPair>();
+
+	for(int i=0; i<words.length-1; i++){
+		for(int j=i+1; j<words.length; j++){
+			allPairs.add(new WordPair(words[i], words[j]));
+		}
+	}
+}
+
+Q2b:
+public int numMatches(){
+	int num = 0;
+	for(WordPair wp: allPairs){
+		if(wp.getFirst().equals(wp.getSecond())){
+			num++;
+		}
+	}
+	return num;
+}
+
+Q3a:
+class CodeWordChecker implements StringChecker{
+	
+	private int min;
+	private int max;
+	private String notAllowed = "";
+	
+	public CodeWordChecker(int min, int max, String notAllowed){
+		this.min = min;
+		this.max = max;
+		this.notAllowed = notAllowed;
+	}
+	
+	public CodeWordChecker(String notAllowed){
+		this(6, 20, notAllowed);
+	}
+	
+	public boolean isValid(String s){
+		if(s.length > min && s.length < max){
+			if(s.indexOf(notAllowed) < 0){
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
+Q4a:
+public static int[] getColumn(int[][] arr2d, int c){
+	int[] cols = new int[arr2d.length];
+	for(int i=0;i<arr2d.length; i++){
+		cols[i] = arr2d[i][c];
+	}
+	return cols;
+}
+
+Q4b:
+public static boolean isLatin(int[][] square){
+	
+	if(containsDuplicates(square[0])){
+		return false;
+	}
+
+	for(int i =1; i<square.length; i++){
+		if(!hasAllValues(square[0], square[i])){
+			return false;
+		}
+	}
+	
+	for(int i=0; i<square[0].length; i++){
+		if(!hasAllValues(square[0], getColumn(i))){
+			return false;
+		}
+	}
+	
+	return true;
+}

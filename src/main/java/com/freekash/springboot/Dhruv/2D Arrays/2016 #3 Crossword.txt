@@ -1,0 +1,31 @@
+a. private boolean toBeLabeled (int r, int c, boolean[][] blackSquares) {
+	if (boolean[r][c] blackSquares) {
+		return false;
+	}
+	if ! (boolean[r+1][c] blackSquares){
+		return true;
+	}
+	if ! (boolean[r-1][c] blackSquares){
+		return true;
+	}
+	if ! (boolean[r][c+1] blackSquares){
+		return true;
+	}
+	if ! (boolean[r][c-1] blackSquares){
+		return true;
+	}
+}
+
+
+b. public Crossword(boolean[][] blackSquares) {
+	Square[][] test;
+	j = 1;
+	for (int i = 0; i < blackSquares.length(); i++) {
+		for (int k = 0; k < blackSquares[i].length(); k++){
+			if (toBeLabeled(i,k, boolean[][] blackSquares) {
+				test[i][k] = j;
+				j++;
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+a. public SkyView(int numRows, int numCols, double[] scanned) {
+	double[numRows][numCols] view;
+	**int count = 0;** <-- make sure to create a counter for the array index
+	for (int i = 0; i < numRows; i++) {
+		if (i % 2 != 0) {
+			for(int j = 0; j < numCols; j++) {
+				view[i][j] = view[numCols - j];
+			}
+		}
+		else{
+		for (int k = 0; k < numCols; k++){
+			view[i][k] = scanned[k];
+			}
+		}
+	}
+}
+
+Score: 3/5 --> make sure to have an index counter for the array itself, and then start from reverse index for if --> for(int j = numCols - 1; j >=0; j--)
+
+b. public double getAverage(int startRow, int endRow, int startCol, int endCol) {
+	double total = (1 + endRow-startRow)*(1 + endCol-startCol);
+	double counting = 0;
+	for (int i = startRow; i <= endRow; i++) {
+		for (int j = startCol; j <= endCol; j++) {
+			counting += view[i][j];
+		}
+	}
+	return (counting/total);
+}
+
+Score: 4/4 

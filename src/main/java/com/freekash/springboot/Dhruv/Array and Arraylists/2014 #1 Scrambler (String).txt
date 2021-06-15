@@ -1,0 +1,31 @@
+a. public static String scrambleWord(String word) {
+	String scrambled = "";
+	for (int i = 0; i < word.length(); i++){
+		if ((word[i] == "A") && != word[i+1]) {
+			scrambled[i] = word[i+1];
+			scrambled[i+1] = word[i];
+			i++;
+		}
+		else {
+			scrambled[i] = word[i];
+		}
+	}
+	return scrambled;
+}
+
+Score: 4/5 --> make sure to use the correct method of substring to get the characters at an index position
+
+b. public static void scrambleOrRemove (List<String> wordList) {
+	List<String> scrambledList;
+	for (int i = 0; wordList.length(); i++){
+		if (wordList[i] != scrambleWord(wordList[i])) {
+			scrambledList[i] = scrambleWord(wordList[i]);
+		}
+	}
+}
+
+Score: 4/4
+
+
+### COMMENTS:
+Make sure yto memorize all of the methods that are allwoed on the reference sheet so that you are accustomed to them and use the porper methods, also you can use arraylist methods on arrays when answering

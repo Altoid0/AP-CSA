@@ -1,0 +1,24 @@
+a. public LogMessage(String message) {
+	int colon = message.indexOf(":");
+	machineId = message.substring(0, colon);
+	description = message.substring(colon + 1);
+}
+
+Score 2/2
+b. public boolean containsWord(String keyword) {
+	String desc = getDescription();
+	if (desc.indexOf(keyword) >= 0 && (desc.indexOf(keyword).equals(0) || desc[desc.indexOf(keyword)-1].equals(" ")) && (desc.indexOf(keyword).equals(desc.length()-1) || desc[desc.indexOf(keyword)+1].equals(" "))) {
+		return true;
+	}
+	return false;
+}
+
+c. public List<LogMessage> removeMessages(String keyword) {
+	List<LogMessage> finallist;
+	for (String message: messageList) {
+		if (containsWord(keyword)){
+			finallist.add(message);
+		}
+	}
+	return finallist;
+}

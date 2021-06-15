@@ -1,0 +1,45 @@
+a. public class SubstringChecker implements Checker {
+	private String phrase = "";
+	
+	public SubstringChecker(String str) {
+		phrase = str;
+	}
+	
+	boolean accept (String text) {
+		if (phrase.indexOf(text) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
+Score: 4/4
+
+
+b. public class AndChecker implements Checker {
+	**proper initialization of instance**
+	private Checker first;
+	private Checker second;
+	**
+	Checker first = new SubstringChecker();
+	Checker second = new SubstringChecker();
+	
+	public AndChecker(Checker fir, Checker sec) {
+		first = fir;
+		second = sec;
+	}
+	
+	boolean accept (String text) {
+		if (first.accept(text) && second.accept(text)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+}
+Score: 3/4 --> make sure to properly initialize the instance variabes as private and just the class name

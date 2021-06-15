@@ -1,0 +1,25 @@
+public class Hidden {
+	private word;
+	
+	public Hidden(String w) {
+		word = w;
+	}
+	
+	public String getHint(String test) {
+		String hint = "";
+		for(int i = 0; i < test.length(); i++) {
+			if (word.subtring(i,i+1).equals(test.subtring(i,i+1)) {
+				hint += test.subtring(i,i+1);
+			}
+			if (word.indexOf(test.subtring(i,i+1)) > 0) {
+				hint += "+";
+			}
+			if (word.indexOf(test.subtring(i,i+1)) < 0) {
+				hint += "*";
+			}
+		}
+		return hint;
+	}
+}
+
+Score: 8/9 --> make sure to have the else if to check following cases and not just if, have != -1 for index of when finding for "+" string

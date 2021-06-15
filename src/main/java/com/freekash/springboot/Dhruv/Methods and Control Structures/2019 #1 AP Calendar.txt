@@ -1,0 +1,26 @@
+a. public static int numberOfLeapYears(int year1, int year2) {
+	public int count = 0;
+	for (i = year1; i < year2; i++) {
+		if(isLeapYear(i)) {
+			count++;
+		}
+	}
+	return count;
+}
+
+Score: 4/5  --> missing point for looping through entire range of values because of <=
+
+
+b. public static int dayOfWeek(int month, int day, int year) {
+	int firstday = firstDayOfYear(year);
+	int dayofyear = dayOfYear(month, day, year);
+	return (firstday + (dayofyear % 7)); 
+}
+
+
+Score: 3/4 --> value calculated is incorrect, must use ((firstday + dayofyear - 1) % 7)
+
+
+### COMMENTS
+a. make sure to have a <= instead of just < for the comparison
+b. add the first day and day of year - 1 before mod 7 --> ((firstday + dayofyear - 1) % 7)

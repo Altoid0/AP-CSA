@@ -1,0 +1,63 @@
+a. public static int totalLetters(List<String> wordList) {
+	int numletters = 0;
+	for (i = 0; i < wordList.size()-1; i++){
+		for(j = 0; j < wordList[i].length()-1; k++){
+			numletters++;
+		}
+	}
+	return numletters;
+}
+Score: 2/2 
+
+b. public static int basicGapWidth(List<String> wordList, int formattedLen) {
+	int leftovers = formattedLen - basicGapWidth(wordList);
+	int numwords = wordList.size();
+	int numgaps = (numwords - 1) - (numwords % leftovers);
+	return numgaps;
+}
+Score: 0/2 --> must call totalLetters and calculate the value properly (formattedLen - totalLetter(worList))/(worList.size()-1))
+
+
+c. public static String format(list<String> wordList, int formattedLen) {
+	String finaltext = "";
+	for (i=0; i < wordList.size()-1; i++) {
+		for (k = 0; k < wordList[i].length()-1; k++) {
+			finaltext += wordList[i].substring(k, k+1);
+		}
+		finaltext += basicGapWidth(List<String> wordList, int formattedLen);
+	}
+	for (j=0; j < leftoverSpaces(List<String> wordList, int formattedLen); j++){
+		finaltext += " ";
+	}
+}
+Score: 0/5 ---> 
+
+#### CORRECT PART C
+public static String format(List<String> wordList, int formattedLen)
+ {
+ int gapWidth = basicGapWidth(wordList, formattedLen); 
+ String gap = "";
+ for (int count = 0; count < gapWidth; count++)
+ gap += " ";
+ int extraSpaces = leftoverSpaces(wordList, formattedLen);
+ String formattedStr = "";
+ for (int i = 0; i < wordList.size() - 1; i++)
+ {
+ formattedStr += wordList.get(i) + gap;
+ if (extraSpaces > 0) 2
+ {
+ formattedStr += " ";
+ extraSpaces--;
+ }
+ }
+ formattedStr += wordList.get(wordList.size() - 1); 3
+ return formattedStr;
+ } 
+ 
+ 
+ 
+ 
+### COMMENTS
+for parsing arraylists in a for loop, just use a simple array parsing method 
+ex. for (String word: worList) <-- in this case its a for loop that iterates each string in the array
+ex. for integers it would be --> for(int num: numList)

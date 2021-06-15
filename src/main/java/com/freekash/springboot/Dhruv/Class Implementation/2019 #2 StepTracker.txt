@@ -1,0 +1,30 @@
+public class StepTracker {
+	private int minimum;
+	private int activedays = 0;
+	private int totalsteps = 0;
+	**private int numdays**
+	
+	public StepTracker(int min) {
+		minimum = min;
+		**activedays = 0;**
+		**totalsteps = 0;**
+	}
+	** Make sure to initialize all values in the constructor method**
+	public **void** addDailySteps(int val) {
+		if (val >= minimum) {
+			activedays++;
+			totalsteps += val;
+		}
+	}
+	
+	public int activeDays() {
+		return activedays;
+	}
+	
+	public double averageSteps() {
+		double avg = double (totalsteps/activedays);
+		return avg;
+	}
+}
+
+Score: 6/9 --> make sure to use the total number of days and not just the active day, read the question to see exactly what they are trying to ask.

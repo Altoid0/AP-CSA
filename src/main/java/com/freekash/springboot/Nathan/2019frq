@@ -1,0 +1,139 @@
+https://apcentral.collegeboard.org/pdf/ap19-frq-computer-science-a.pdf
+https://apcentral.collegeboard.org/pdf/ap19-sg-computer-science-a.pdf
+35 min;
+
+8/9 (forgot to subtract one off date)
+1A:
+public static int numberOfLeapYears(int year1, int year2){
+	int leapYears = 0;
+	for(int i=year1; i<= year2; i++){
+		if(isLeapYear(i)){
+			leapYears++;
+		}
+	}
+	return leapYears;
+}
+
+1B:
+public static int dayOfWeek(int month, int day, int year){
+	int firstDay = firstDayOfYear(year);
+	int day = dayOfYear(month, day, year);
+	int diff = day % 7;
+	return (firstDay + diff)%7;
+}
+
+2A:
+public class StepTracker {
+	
+	private int activeStepsMin;
+	private ArrayList<Integer> days;
+	public StepTracker(int activeStepsMin){
+		this.activeStepsMin = activeStepsMin; 
+		days = new ArrayList<Integer>();
+	}
+	
+	public void addDailySteps(int steps){
+		days.add(steps);
+	}
+	
+	public int activeDays(){
+		int aDays = 0;
+		for(int d: days){
+			if(d >= activeStepsMin){
+				aDays++;
+			}
+		}
+		return aDays;
+	}
+	
+	public double averageSteps(){
+		if(days.size() == 0) return 0.0;
+		double total = 0;
+		for(int d: days){
+			total += d;
+		}
+		return d/days.size();
+	}
+	
+}
+
+3A:
+public ArrayList<String> getDelimitersList(String[] tokens){
+	ArrayList<String> delims = new ArrayList<String>();
+	for(String s: tokens){
+		if(s.equals(openDel) || s.equals(closeDel)){
+			delims.add(s);
+		}
+	}
+	return delims;
+}
+
+3B:
+public boolean isBalanced(ArraList<String> delimiters){
+	int totalOpen = 0;
+	int totalClose = 0;
+	for(int i=0; i<delimiters.size(); i++){
+		int open = 0;
+		int close = 0;
+		
+		if(delimiters.get(i).equals(openDel)){
+			totalOpen++;
+		}else{
+			totalClose++;
+		}
+		
+		for(int j=0; j<=i; j++){
+			if(delimiters.get(j).equals(openDel)){
+				open++;
+			}else{
+				close++;
+			}
+		}
+		if(close > open){
+			return false;
+		}
+	}
+	
+	return totalOpen == totalClose;
+}
+
+
+4A:
+public LightBoard(int numRows, int numCols){
+	lights = new boolean[numRows][numCols];
+	
+	for(int r=0; r<lights.length; r++){
+		for(int c=0; c<lights[0].length; c++){
+			if(Math.random() < .4){
+				lights[r][c] = true;
+			}else{
+				lights[r][c] = false;
+			}
+		}
+	}
+}
+
+4B:
+public boolean evaluateLight(int row, int col){
+	boolean status = lights[row][col];
+	int onLights = 0;
+	for(int i=0; i<lights.length; i++){
+		if(lights[i][col]){
+			onLights++;
+		}
+	}
+	
+	if(status){
+		if(onLights % 2 == 0){
+			return false;
+		}
+	}else{
+		if(onLights % 3 == 0){
+			return true;
+		}
+	}
+	
+	return status;
+}
+
+

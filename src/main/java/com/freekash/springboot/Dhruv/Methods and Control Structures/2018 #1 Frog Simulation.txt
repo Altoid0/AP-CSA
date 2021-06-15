@@ -1,0 +1,33 @@
+a. public boolean simulate() {
+	int totaldist = 0;
+	for (i = 0; i <= maxHops; i++) {
+		totaldist += hopDistance();
+		if (totaldist < 0) {
+			return false;
+		}
+		else if (totaldist >= goalDistance) {
+			return true;
+		}
+	}
+	return false;
+}
+
+Score 4/5 --> the bounds for the for loop must be i < maxHops
+
+
+b. public double runSimluations(int num) {
+	double count = 0.0;
+	for(i=0; i <= num; i++) {
+		if (simulate()) {
+			count++;
+		}
+	}
+	return (count/num);
+}
+
+Score 3/4 --> the bounds for the for loop must be i < num
+
+
+### COMMENTS
+make sure to know when to use the <= and when to use just < in a for loop as pertaining to the use case
+know the difference between each and how to start the counting in a for loop.

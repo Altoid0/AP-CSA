@@ -1,0 +1,140 @@
+public static int numberOfLeapYears(int year1, int year2) {
+   int counter = 0;
+   for (int i = year1; i <= year2; i++) {
+      if (isLeapYear(i)) {
+	counter++;
+      }
+   }
+   return counter;
+}
+
+public static int dayOfWeek(int month, int day, int year) {
+  int firstDay = firstDayOfYear(year);
+  int yearDay = dayOfYear(month, day, year);
+  return firstDayOfYear + (dayOfYear % 7) - 1;
+}
+
+
+
+
+
+
+public class StepTracker {
+   private int minimumSteps;
+   private int totalSteps;
+   private int activedays;
+   private int totalDays
+   public StepTracker(int min) {
+      minimumSteps = min;
+      totalSteps = 0;
+      activedays = 0;
+      totalDays = 0;
+   }
+   public void addDailySteps(int steps) {
+      totalSteps+=steps;
+      if (steps >= minimumSteps) {
+         activedays+=1;
+      }
+      totalDays+=1;
+   }
+   public int activeDays() {
+      return activedays;
+   }
+   public double averageSteps() {
+      return (totalSteps / (double)totalDays);
+   }
+}
+
+
+
+
+public ArrayList<String> getDelimitersList(String[] tokens) {
+   ArrayList<String> delimeters = new ArrayList<String>();
+   for (int i = 0; i < tokens.length; i++) {
+      if (tokens[i].equals(openDel)) {
+         delimeters.add(tokens[i]);
+      else if (tokens[i].equals(closeDel)) {
+         delimeters.add(tokens[i]);
+      }
+   }
+   return delimeters;
+}
+
+public boolean isBalanced(ArrayList<String> delimiters) {
+   int opendel = 0;
+   int closedel = 0;
+   for (i = 0; i < delimiters.length(); i++) {
+      if (delimeters.get(i).equals(openDel)) {
+         opendel+=1;
+      }
+      if (delimeters.get(i).equals(closeDel)) {
+         closedel+=1;
+      }
+      if (closedel > opendel) {
+         return false;
+      }
+   }
+   if (opendel == closedel) {
+      return true;
+   }
+   return false;
+}
+
+
+
+
+
+
+public LightBoard(int numRows, int numCols) {
+   lights = new boolean[numRows][numCols];
+   for (int i = 0; i < numRows; i++) {
+      for (int j = 0; j < lights[i].length; j++) {
+         probability = (int)((Math.random() * 100) + 1);
+         if (probability <= 40) {
+            lights[i][j] = true;
+         }
+         else {
+            lights[i][j] = false;
+         }
+      }
+   }
+}
+
+public boolean evaluateLight(int row, int col) {
+   int onLights = 0;
+   int offLights = 0;
+   if (lights[row][col]) {
+      for (int i = 0; i < lights[row].length; i++) {
+         if (lights[row][i]) {
+            onLights+=1;
+         }
+         else {
+            offLights+=1;
+         }
+      if ((onLights % 2) == 0) {
+         return false;
+      }
+   }
+   else {
+      for (int i = 0; i < lights[row].length; i++) {
+         if (lights[row][i]) {
+            onLights+=1;
+         }
+         else {
+            offLights+=1;
+         }
+      }
+      if ((onLights % 3) == 0) {
+         return true;
+      }
+   }
+   boolean status = lights[row][col];
+   return status;
+}
+      
+
+
+         
+
+
+   

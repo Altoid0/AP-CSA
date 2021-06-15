@@ -1,0 +1,124 @@
+public static int hailstoneLength(int n) {
+	int count = 1;
+	int x = 0;
+	int m = n;
+	while (x < 1) {
+		if (m == 1) {
+			break;
+		}
+		if (m % 2 == 0) {
+			m/=2;
+			count++;
+		}
+		else {
+			m = m * 3 + 1;
+			count++;
+		}
+	}
+	return count;
+}
+
+public static boolean isLongSeq(int n) {
+	if (n < hailstoneLength(n)) {
+		return true;
+	}
+	return false;
+}
+
+public static double propLong(int n) {
+	int count = 0;
+	for (int i = 1; i <= n; i++) {
+		if (isLongSeq(i)) {
+			count++;
+		}
+	}
+	return (double) count / n;
+}
+
+public class GameSpinner {
+	private int sectors;
+	private int runs;
+	private int lastSpin;
+
+	public GameSpinner(int num) {
+		sectors = num;
+		runs = 0;
+		lastSpin = 0;
+	}
+
+	public int spin() {
+		int num = (int) (Math.random() * sectors + 1);
+		if (num == lastSpin) {
+			runs++;
+		}
+		else {
+			runs = 1;
+		}
+		lastSpin = num;
+		return num;
+	}
+
+	public int currentRun() {
+		return runs;
+	}
+}
+
+
+
+public void addReview(ProductReview prodReview) {
+	reviewList.add(prodReview);
+	boolean check = true;
+	for (int i = 0; i < productList.size(); i++) {
+		if (productList.get(i).equals(prodReview.getName())) {
+			check = false;
+		}
+	}
+	if (check) {
+		productList.add(prodReview.getName());
+	}
+}
+
+public int getNumGoodReviews(String prodName) {
+	ArrayList<ProductReview> list = new ArrayList<ProductReview>();
+	int count = 0;
+	for (int i = 0; i < reviewList.size(); i++) {
+		if (reviewList.get(i).getName().equals(prodName)) {
+			list.add(reviewList.get(i));
+		}
+	}
+	if (list.size() == 0) {
+		return count;
+	}
+	for (int i = 0; i < list.size(); i++) {
+		if (list.get(i).getReview().indexOf("best") != -1) {
+			count++;
+		}
+	}
+	return count;
+}
+
+public Theater(int seatsPerRow, int tier1Rows, int tier2Rows) {
+	theaterSeats = new Seat[tier1Rows + tier2Rows][seatsPerRow];
+	for (int r = 0; r < tier1Rows; r++) {
+		for (int c = 0; c < seatsPerRow; c++) {
+			theaterSeats[r][c] = new Seat(true, 1);
+		}
+	}
+	for (int r = tier1Rows; r < tier1Rows + tier2Rows; r++) {
+		for (int c = 0; c < seatsPerRow; c++) {
+			theaterSeats[r][c] = new Seat(true, 2);
+		}
+	}
+}
+
+public boolean reassignSeat(int fromRow, int fromCol, int toRow, int toCol) {
+	if (theaterSeats[fromRow][fromCol].getTier() <= theaterSeats[toRow][toCol].getTier() && theaterSeats[toRow][toCol].isAvailable() == true) {
+		theaterSeats[fromRow][fromCol].setAvailability(true);
+		theaterSeats[toRow][toCol].setAvailability(false);
+		return true;
+	}
+	return false;
+}
+
+
+	

@@ -1,0 +1,34 @@
+a. public SeatingChart(List<Student> studentList, int rows, int cols) {
+	**newseats = new Student[rows][cols];**
+	Student[rows][cols] newseats;
+	int studentindex = 0;
+	for (i=0; i < newseats.length(); i++) {
+		for (k=0; k < newseats[0].length(); k++) {
+			** if (studentindex < studentList.size())**
+			newseats[i][k] = studentList[studentindex];
+			studentindex++;
+		}
+	}
+}
+Score: 4/5  --> make sure to check the bounds on the student list 
+
+b. public int removeAbsentSutednt(int allowedAbscences) {
+	**int count = 0**
+	for (i=0; i < seats.length(); i++) {
+		for (k=0; k < seats[0].length(); k++) {
+			**if (seats[i][k] != null && seats[i][k].getAbsenceCount() > allowedAbscences)**
+			if (seats[i][k] > allowedAbscences) {
+				seats[i][k] = null;
+				**count++;**
+			}
+		}
+	}
+	**return count;**
+}
+
+Score: 1/4 ---> make sure to review the method calls and reading what the question wants
+
+
+
+### COMMENTS
+Look over the specific methods for arrays, 2d arrays, and arraylists, they will be required to know

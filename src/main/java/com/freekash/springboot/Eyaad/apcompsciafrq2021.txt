@@ -1,0 +1,108 @@
+1. a
+public int scoreGuess(String guess) {
+	int count = 0;
+	int x = 0;
+	String check = secret;
+	while (x < 1) {
+		if (check.indexOf(guess) != -1) {
+			count++;
+			check = check.substring(0, check.indexOf(guess)) + check.substring(check.indexOf(guess) + guess.length());
+		} else {
+			x++;
+		}
+	}
+	return count * guess.length() * guess.length();
+			
+}
+
+   b
+public String findBetterGuess(String guess1, String guess2) {
+	int a = scoreGuess(guess1);
+	int b = scoreGuess(guess2);
+	if (a > b) {
+		return guess1;
+	if (b > a) {
+		return guess2;
+	if (guess1.compareTo(guess2) > 0) {
+		return guess1;
+	}
+	return guess2;
+}
+
+2. 
+public class CombinedTable {
+	private int possibleSeats;
+	private double desirability;
+
+	public CombinedTable(SingleTable t1, SingleTable t2) {
+		possibleSeats = t1.getNumSeats() + t2.getNumSeats() - 2;
+		if (t1.getHeight() == t2.getHeight()) {
+			desirability = (t1.getViewQuality() + t2.getViewQuality()) / 2;
+		} else {
+			desirability = (t1.getViewQuality() + t2.getViewQuality()) / 2 - 10;
+		}
+	}
+	
+	public boolean canSeat(int num) {
+		if (possibleSeats >= num) {
+			return true;
+		}
+		return false;
+	}
+
+	public double getDesirability() {
+		return desirability;
+	}
+}
+
+3. a
+public void addMembers(String[] names, int gradYear) {
+	for (String name : names) {
+		memberList.add(new MemberInfo(name, gradYear, true));
+	}
+}
+
+   b
+public ArrayList<MemberInfo> removeMembers(int year) {
+	ArrayList<MemberInfo> list = new ArrayList<MemberInfo>();
+	for (int i = 0; i < memberList.size(); i++) {
+		if (memberList.get(i).getGradYear() <= year) {
+			if (memberList.get(i).inGoodStanding())  {
+				list.add(memberList.get(i));
+			}
+			memberList.remove(i);
+			i--;
+		}
+	}
+	return list;
+}
+
+4. a
+public static boolean isNonZeroRow(int[][] array2D, int r) {
+	for (int i = 0; i < array2D[r].length; i++) {
+		if (array2D[r][i] == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+   b
+public static int[][] resize(int[][] array2D) {
+	int[][] arr = new int[numNonZeroRows(array2D)][array2D[0].length];
+	int i = 0;
+	int x = 0;
+	while (x <= arr.length) {
+		if (isNonZeroRow(array2D, i)) {
+			for (int j = 0; j < arr[x].length; j++) {
+				arr[x][j] = array2D[i][j];
+			}
+			x++;
+		}
+		i++;
+	}
+	return arr;
+
+1. Our culture, environment and history play in the development of our identity as these things are what shape our experiences, which impact our identity and how we see the world.
+2. My identity influences my perspectives and the way I view the world as my identity is shaped by my experiences, which thus influences my perspectives. The way I view the world depends largely on the environment I was brought up in and the culture around me.
+3. Even when moving through different communities or cultures, my identity will still be maintained as it is ingrained in us since it is shaped by our experiences. It may change depending on future experiences in new places but it will not fully go away.

@@ -1,0 +1,117 @@
+public static String scrambleWord(String word) {
+   String changedWord = word;
+   char temp = "";
+   if (changedWord.length() == 0) {
+      return changedWord;
+   }
+   for (int i = 0; i < changedWord.length(); i++) {
+      if (changedWord.charAt(i).equals("A")) {
+         if (!(changedWord.charAt(i+1).equals("A"))) {
+             temp = changedWord.chartAt(i);
+             changedWord.chartAt(i) = changedWord.chartAt(i+1);
+             changedWord.chartAt(i+1) = temp;
+             i+=1
+         }
+      }
+   }
+   return changedWord;
+}
+
+public static void scrambleOrRemove(List<String> wordList) {
+   for (int i = 0; i < wordList.size(); i++) {
+      String scrambled = scrambleWord(wordList.get(i)));
+      if (wordList.get(i).equals(scrambled)) {
+         wordList.remove(i);
+         i--;
+      }
+      else {
+         wordList.set(i, scrambled);
+      }
+   }
+}
+
+
+
+public class Director {
+ //not doing
+ //requires gridworld case study
+}
+
+
+public SeatingChart(List<Student> studentList, int rows, int cols) {
+   seats = new Student[rows][cols];
+   int index = 0;
+   for (int i = 0; i < cols; i++) {
+      for (int j = 0; j < rows; j++) {
+         if (index > (studentList.size() - 1)) {
+            seats[j][i] = null;
+            index++;
+         else {
+            seats[j][i] = studentList.get(index);
+            index++;
+         }
+      }
+   }
+}
+
+public int removeAbsentStudents(int allowedAbsences) {
+   int absents = 0;
+   for (int i = 0; i < seats.length; i++) {
+      for (int j = 0; j < seats[i].length; j++) {
+         if (seats[i][j] == null) {
+            continue;
+         }
+         if (seats[i][j].getAbsenceCount() > allowedAbsences) {
+            seats[i][j] = null;
+            absents++;
+         }
+      }
+   }
+   return absents;
+}
+
+public class Trio implements MenuItem {
+   private Sandwich sandwich;
+   private Salad salad;
+   private Drink drink;
+   
+   public String getName() {
+      String s = sandwich.getName() + "/" + salad.getName() + "/" + drink.getName() + " Trio";
+      return s;
+   }
+   
+   public double getPrice() {
+      double sandwichCost = sandwich.getPrice();
+      double saladCost = salad.getPrice();
+      double drinkCost = drink.getPrice();
+      if (sandwichCost <= saladCost && sandwichCost <= drinkCost) {
+         return saladCost + drinkCost;
+      }
+      else if (saladCost <= sandwichCost && saladCost<= drinkCost) {
+         return sandwichCost + drinkCost;
+      }
+      else if (drinkCost <= sandwichCost && drinkCost <= saladCost) {
+         return sandwichCost + saladCost;
+      }
+   }
+   
+   public Trio (Sandwich sanwich, Salad salaid, Drink dink) {
+      sandwich = sanwich;
+      salad = salaid;
+      drink = dink;
+   }
+   
+   
+   
+
+
+
+
+
+
+
+
+   
+
+
+

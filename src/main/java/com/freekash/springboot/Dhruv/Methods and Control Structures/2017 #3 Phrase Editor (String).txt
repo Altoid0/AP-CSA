@@ -1,0 +1,22 @@
+a. public void replaceNthOccurence (String str, int n , String repl) {
+	int index = findNthOccurence(String str, int n);
+	if (index != -1) {
+		currentPhrase = currentPhrase.substring(0,index-1) + repl + currentPhrase.substring(index + str.length());
+	}
+	
+}
+4/5 --> make sure to have the right index for the first part so (0,index) as the last index is exclusive
+
+b. public int findLastOccurence (String str) {
+	int j = 0;
+	for (int i = 1; findNthOccurence(str, i) == -1; i++) {
+		j = findNthOccurence(str, i);
+	}
+	return j;
+}
+
+4/4
+
+
+### COMMENTS
+make sure to not forget to write a semicolon after each line

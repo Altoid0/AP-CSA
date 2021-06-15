@@ -1,0 +1,128 @@
+part 1A:
+
+public static int arraySum (int [] arr){
+	int sum = 0;
+	for(int v: arr){
+		sum += v;
+	}
+	return sum;
+]
+
+part 1B:
+public static int[] rowSums(int[][] arr2D){
+	
+	int rows = new int[arr2D.length];
+	for(int i=0;i<arr2D.length; i++){
+		rows[i] = arraySum(arr2D[i]);
+	}
+	return rows;
+}
+
+part 1C:
+public static boolean isDiverse(int[][] arr2D){
+	int[] rows = rowSums(arr2D);
+	boolean diverse = true;
+	for(int i=0;i<rows.length;i++){
+		for(int j=i+1;j<rows.length;j++){
+			if(rows[i] == rows[j]){
+				diverse = false;
+			}
+		}
+	}
+	return diverse;
+}
+
+
+part 2:
+public class HiddenWord{
+
+	private String hiddenWord = "";
+	public HiddenWord(String hw){
+		hiddenWord = hw;
+	}
+	
+	public String getHint(String guess){
+		String hint = "";
+		for(int i=0;i<guess.length;i++){
+			String letter = guess.substring(i, i+1);
+			if(letter.equals(hiddenWord.substring(i, i+1))){
+				hint += letter;
+			}else if(hiddenWord.indexOf(letter) >= 0){
+				hint += "+";
+			}else{
+				hint += "*";
+			}
+		}
+		return hint;
+	}
+
+}
+
+
+part 3A:
+public int getValueAt(int row, int col){
+	for(SparseArrayEntry sae: entries){
+		if(sae.getRow() == row && sae.getCol() == col){
+			return sae.getValue();
+		}
+	}
+	return 0;
+}
+
+part 3B:
+public void removecolumn(int col){
+
+	for(int i=0;i<entries.size();i++){
+		SparseArrayEntry sae = entries.get(i);
+		if(sae.getCol() == col){
+			entries.remove(i);
+			i--;
+		}else if(sae.getCol() > col){
+			int tempRow = sae.getRow();
+			int tempCol = sae.getCol();
+			int tempVal = sae.getValue();
+			entries.remove(i);
+			entries.add(i, new SparseArrayEntry(tempRow, tempCol-1, tempVal));
+		}
+	}
+	numCols--;
+}
+
+part 4A:
+public interface NumberGroup{
+	boolean contains(int n);
+}
+
+part 4B:
+public class Range implements NumberGroup{
+	private int min;
+	private int max;
+	public Range(int mi, int ma){
+		min = mi;
+		max = ma;
+	}
+	
+	public boolean contains(int n){
+		if(n >= min && n <= max){
+			return true;
+		}
+		return false;
+	}
+	
+	
+}
+
+part 4C:
+public boolean contains(int num){
+	for(NumberGroup ng: groupList){
+		if(ng.contains(num)){
+			return true;
+		}
+	}
+	return false;
+}
+
+
+
+
+

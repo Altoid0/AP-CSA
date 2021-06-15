@@ -1,0 +1,109 @@
+https://apcentral.collegeboard.org/pdf/ap21-frq-computer-science-a.pdf
+https://apcomputersciencetutoring.com/exam-review/wordmatch-free-response/
+40 min
+
+1A:
+public int scoreGuess(String guess){
+	String secretCopy = secret;
+	int occurrences = 0;
+	while(secretCopy.indexOf(guess) > -1){
+		occurrences++;
+		int index = secretCopy.indexOf(guess);
+		if(index >= secretCopy.length-1) break;
+		secretCopy = secretCopy.substring(index+1);
+	}
+	return occurrences * guess.length() * guess.length();
+}
+
+1B:
+public String findBetterGuess(String guess1, String guess2){
+	int score1 = scoreGuess(guess1);
+	int score2 = scoreGuess(guess2);
+	
+	if(score1 > score2){
+		return guess1;
+	}else if(score2 > score1{
+		return guess2;
+	}
+	
+	if(guess1.compareTo(guess2) > 0){
+		return guess1;
+	}
+	
+	return guess2;
+}
+
+2:
+public class CombinedTable {
+	
+	private SingleTable t1;
+	private SingleTable t2;
+	public CombinedTable(SingleTable t1, SingleTable t2){
+		this.tl = t1;
+		this.t2 = t2;
+	}
+	
+	public boolean canSeat(int seats){
+		if(seats <= (t1.getNumSeats + t2.getNumSeats - 2)){
+			return true;
+		}
+		return false;
+	}
+	
+	public double getDesirability(){
+		double avg = (t1.getViewQuality() + t2.getViewQuality())/2
+		if(t1.getHeight() != t2.getHeight()){
+			avg -= 10;
+		}
+		return avg;
+	}
+	
+}
+
+
+3A:
+public void addMembers(String[] names, int gradYear){
+	for(String name: names){
+		memberList.add(new MemberInfo(name, gradYear, true));
+	}
+}
+
+3B:
+public ArrayList<MemberInfo> removeMembers(int year){
+	ArrayList<MemberInfo> retMembers = new ArrayList<>();
+	for(int i=0; i< memberList.size(); i++){
+		MemberInfo m = memberList.get(i);
+		if(m.getGradYear() <= year){
+			memberList.remove(i);
+			i--;
+			if(m.inGoodStanding()){
+				retMembers.add(m);
+			}
+		}
+	}
+	return retMembers;
+}
+
+4A:
+public static boolean isNonZeroRow(int[][] array2D, int r){
+	for(int m: array2D[r]){
+		if(m == 0){
+			return false;
+		}
+	}
+	return true;
+}
+
+4B:
+public static int[][] resize(int[][] array2D){
+	int nonZeros = numNonZeroRows(array2D);
+	int[][] smaller = new int[nonZeros][array2D[0].length];
+	int index = 0;
+	for(int i=0; i<array2D.length; i++){
+		if(isNonZeroRow(array2D, i)){
+			smaller[index] = array2D[i];
+			index++;
+		}
+	}
+	return smaller;
+}
