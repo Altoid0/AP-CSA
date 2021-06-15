@@ -45,9 +45,6 @@ public class ApplicationController {
         return "about.html";
     }
 
-    @GetMapping("/minilabs")
-    public String minilabs() { return "minilabs.html"; }
-
     @GetMapping("/misc")
     public String misc(){
         return "misc.html";
