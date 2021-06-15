@@ -31,23 +31,28 @@ import java.util.stream.Stream;
 @Controller
 public class ApplicationController {
     @GetMapping("/")
-    public String index(){
+    public String index() {
         return "index.html";
     }
 
     @GetMapping("/how")
-    public String how(){
+    public String how() {
         return "how.html";
     }
 
     @GetMapping("/about")
-    public String about(){
+    public String about() {
         return "about.html";
     }
 
     @GetMapping("/misc")
-    public String misc(){
+    public String misc() {
         return "misc.html";
+    }
+
+    @GetMapping("/crossover")
+    public String crossover() {
+        return "crossover.html";
     }
 
     @GetMapping("/4")
