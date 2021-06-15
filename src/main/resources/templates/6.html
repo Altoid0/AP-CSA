@@ -8,6 +8,58 @@
     <title>Unit 6 | Arrays</title>
 </head>
 <body>
+    <h1>Unit 6 [Arrays]</h1>
 
+    <h3>Primitive vs Non-Primitive Arrays</h3>
+    <p>Arrays can either be primitive or non-primitive depending on the type that they are declared as. If the variable type for the array is a primitive like an int or boolean, then the array is considered primitive. The opposite is also true. When a primitive array is being passed to a function, the actual address of the array is passed to the function, not a copy of the object. What this means is the actual array gets passed in and if changes are made to the array those changes will persist even after the method is finished.</p>
+    <pre>
+    <code>
+    Void changeIt(int[] arr){
+        arr[0] = 100;
+    }
+
+    int[] nums = int[]{1,2,3,4,5};
+    changeIt(nums);
+    System.out.println(Arrays.toString(nums)); // [100,2,3,4,5]
+    </code>
+    </pre>
+
+    <h3>Losing Pointers</h3>
+    <p>The “new” keyword followed by the primitive array initializer is what creates a new address. This means that if the array inside the function is reinitialized the old pointer will be lost.</p>
+    <pre>
+    <code>
+    Void changeIt(int[] arr){
+        arr = new int[5]; // replaced pointer
+        arr[0] = 100;
+    }
+
+    int[] nums = int[]{1,2,3,4,5};
+    changeIt(nums);
+    System.out.println(Arrays.toString(nums)); // [1,2,3,4,5]
+    </code>
+    </pre>
+
+    <h3>Non-Primitive type arrays</h3>
+    <pre>
+    <code>
+    Mutable [] listTwo;
+    listTwo = new Mutable [3]; // Create 3 empty Mutable objects meaning a length of 2
+    listTwo[1] = new Mutable(33); // Create object and assign to index 1
+    listTwo[0] = new Mutable(listTwo[1].getValue() - 3); // Create an object by passing in another method call as the argument for the object
+    </code>
+    </pre>
+
+    <h3>Transversing an Array</h3>
+    <p>This is the base fore loop that you will use to write the most common array algorithms. Adding in some if statements or tweaking some things we can get this for loop to change the value of each element, search for a specific value, counting occurrences of a specific value, and finding the min and max.</p>
+    <pre>
+    <code>
+    for (int i = 0; i < Cars.length; i++){
+        System.out.println(Cars[i]);
+    }
+    </code>
+    </pre>
+    <p>Some more advanced algorithms include shifting the array.</p>
+    <img src="/rightshift.PNG">
+    <img src="/leftshift.PNG">
 </body>
 </html>
