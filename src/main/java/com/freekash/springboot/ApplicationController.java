@@ -88,6 +88,10 @@ public class ApplicationController {
         return "10.html";
     }
 
+    @GetMapping("/minilabs")
+    public String minilabs(){
+        return "minilabs.html";
+    }
 
     @Autowired
     private CommentSqlRepository commentSqlRepository;
