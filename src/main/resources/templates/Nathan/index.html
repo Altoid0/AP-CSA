@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home | Nathaniel</title>
 </head>
-<body>
+<head th:replace="fragments/fragments :: head"></head>
 
+<body>
+<div th:replace="fragments/fragments :: nav"></div>
     <h1>Nathaniel's FRQ Projects</h1>
     <ul>
         <li><a href="/nathan/recursion">Recursion (MergeSort)</a></li>
