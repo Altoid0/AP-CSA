@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="anthony.css">
     <meta charset="UTF-8">
     <title>Home | Anthony</title>
 </head>
+<head th:replace="fragments/fragments :: head"></head>
+
 <body>
+<div th:replace="fragments/fragments :: nav"></div>
 
     <h1>Anthony's Labs :D</h1>
     <p>Hello! Anthony here. This is a collection of all of my labs for AP CSA.</p>
@@ -14,7 +17,6 @@
         <li><a class="address" href="/anthony/recursion">Recursion</a></li>
         <li><a class="address" href="/anthony/insertion">Insertion</a></li>
         <li><a class="address" href="/anthony/sorts">Sorts</a></li>
-        <li><a class="address" href="/anthony/sql/player">Inheritance Database</a></li>
         <li><a class="address" href="/anthony/linkedlist">Linked Lists</a></li>
         <li><a class="address" href="/anthony/recursionlesson">Recursion Lesson</a></li>
     </ul>
