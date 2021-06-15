@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion | Tanay</title>
+</head>
+<body>
+    <div class="lab">
+        <h1>Recursion Minilabs</h1>
+
+        <h3>Factorial</h3>
+        <form th:action="@{/tanay/recursion}">
+            <label>Simply enter a number to get its factorial value</label>
+            <input type="number" min="1" max="100" th:name="number" th:value="${number}">
+            <input type="submit">
+        </form>
+        <p th:text="${factorial}"></p>
+    </div>
+
+</body>
+</html>

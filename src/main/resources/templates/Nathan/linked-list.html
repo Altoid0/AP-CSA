@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedList | Nathan </title>
+</head>
+<body>
+
+    <h1>Linked Lists</h1>
+
+    <p>A series of nodes connected by "next" pointers.</p>
+    <p>Adding or Removing at the head: <b>O(1)</b></p>
+    <p>Adding or Removing at the tail: <b>O(n)</b></p>
+
+    <input type="number" id="num-input" placeholder="number here">
+    <button onclick="addHead()">Add to Head</button>
+    <button onclick="addTail()">Add to Tail</button>
+
+    <button onclick="remHead()">Remove Head</button>
+    <button onclick="remTail()">Remove Tail</button>
+
+    <div class="items">
+        <div th:each="item: ${linkedList}" class="item" th:classappend="'index-'+${itemStat.index}">
+
+                <div th:switch="${itemStat.index}">
+                    <p th:case="0"><bold class="bold-text">position: HEAD</bold></p>
+                </div>
+
+                <p>address: <span th:text="${item.getMem()}"></span></p>
+                <p>value: <span th:text="${item.getValue()}"></span></p>
+                <p>points to: <span th:text="${item.getNextNode()}"></span></p>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+<script>
+
+    const getVal = () => {
+        return document.getElementById('num-input').value
+    }
+
+    function addHead(){
+        fetch('/nathan/linked-list?addHead='+getVal()).then(response => {
+            location.reload();
+        });
+    }
+
+    function addTail(){
+        fetch('/nathan/linked-list?addTail='+getVal()).then(response => {
+            location.reload();
+        });
+    }
+
+    function remHead(){
+        fetch('/nathan/linked-list?remHead=true').then(response => {
+            location.reload();
+        });
+    }
+
+    function remTail(){
+        fetch('/nathan/linked-list?remTail=true').then(response => {
+            location.reload();
+        });
+    }
+
+</script>
+
+<style>
+
+    .items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item{
+        width: 300px;
+        margin: 10px;
+        text-align: center;
+        background-color: red;
+    }
+
+    .bold-text{
+
+    }
+
+/*
+    .item:last-child{
+        background-color: green;
+    }
+*/
+
+    .index-0{
+        background-color: yellow !important;
+    }
+
+
+</style>
+</html>

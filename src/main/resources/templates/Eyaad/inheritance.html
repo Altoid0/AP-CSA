@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance | Eyaad</title>
+</head>
+<body>
+<div class="lab">
+    <h1>Inheritance lab - Books</h1>
+    <!-- <form id="factForm" action="/fac" method="GET">
+        <label for="num">This program will return the factorial of a number you put</label>
+        <input name="num" id="num" type="number" >
+        <button>Go!</button>
+    </form> -->
+    <h3>Book</h3>
+    <form th:action="@{/eyaad/inheritance}">
+        <label>Create a book with a title and author! Add an illustrator too(Optional)!</label>
+        <br>
+        <label>Title</label>
+        <input  th:name="title" th:value="${title}">
+        <br>
+        <label>Author</label>
+        <input th:name="author" th:value="${author}">
+        <br>
+        <label>Illustrator</label>
+        <input th:name="illustrator" th:value="${illustrator}">
+        <br>
+        <input type="submit">
+    </form>
+    <p th:text="${sentence}"></p>
+    
+    <p th:text="${time}"></p>
+
+</div>
+</body>
+</html>

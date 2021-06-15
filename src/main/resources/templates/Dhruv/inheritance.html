@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance | Dhruv</title>
+</head>
+<body>
+    <h1>Inheritance MiniLab</h1>
+    <p>Here is the implementation of an Inheritance practice minilab</p>
+    <p>This takes the parameters of name and age and applies to two different child classes of Animal</p>
+
+    <h2>Animal Inheritance</h2>
+    <form th:action="@{/dhruv/inheritance}">
+        <label>Animal Name</label>
+        <input type="text" th:name="name" th:value="${name}">
+        <label>Age</label>
+        <input type="number" th:name="age" th:value="${age}">
+        <input type="submit">
+    </form>
+    <p th:text="${birdtext}"></p>
+    <p th:text="${girtext}"></p>
+</body>
+</html>

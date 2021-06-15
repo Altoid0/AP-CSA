@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="anthony.css">
+    <meta charset="UTF-8">
+    <title>Insertion | Anthony</title>
+</head>
+
+<body>
+<h1>Insertion</h1>
+<p>A lab showcasing an insertion sort algorithm using iterative methods.</p>
+
+<h2>Insertion Sort</h2>
+<form th:action="@{/anthony/insertion}">
+    <label>Enter a minimum value, maximum value, and size of a randomly generated array to sort.</label>
+    <br />
+    <p>Min:</p>
+    <input type="number" min="1" max="100" th:name="min" th:value="${min}">
+    <br />
+    <p>Max: </p>
+    <input type="number" min="1" max="100" th:name="max" th:value="${max}">
+    <br />
+    <p>Size: </p>
+    <input type="number" min="1" max="10" th:name="size" th:value="${size}">
+    <br />
+    <input type="submit">
+</form>
+<p th:text="${insertion}"></p>
+<p th:text="${time}"></p>
+
+</body>

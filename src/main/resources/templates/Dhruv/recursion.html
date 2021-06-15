@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion | Dhruv </title>
+
+</head>
+<body>
+    <h1>Recursion MiniLabs</h1>
+    <p>Here is the implementation for a few different types of Recursion practice problems</p>
+    <p>There are 2 mini problems including summation and decimal to binary conversion</p>
+
+    <h2>Summation Recursion</h2>
+    <p>A simple use of recursion to find the summation of all the numbers that come before a</p>
+    <p>specified number all the way to one.</p>
+    <form th:action="@{/dhruv/recursion}">
+        <label>Number Value</label>
+        <input type="number" min="1" th:name="sum" th:value="${sum}">
+        <input type="submit">
+    </form>
+    <p th:text="${finsum}"></p>
+
+
+    <h2>Binary Recursion</h2>
+    <p>A simple use of recursion to convert a decimal number to binary</p>
+    <form th:action="@{/dhruv/recursion}">
+        <label>Decimal Number Value</label>
+        <input type="number" min="1" max="100" th:name="bin" th:value="${bin}">
+        <input type="submit">
+    </form>
+    <p th:text="${finbin}"></p>
+
+
+
+
+    <!--    <h2>Tail Recursion</h2>-->
+<!--    <form th:action="@{/dhruv/recursion}">-->
+<!--        <label>Tail Value</label>-->
+<!--        <input type="number" min="1" max="100" th:name="corr" th:value="${tail}">-->
+<!--        <input type="number" min="1" max="100" th:name="tail" th:value="${tail}">-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+<!--    <p th:text="${fintail}"></p>-->
+
+
+<!--    <h2>Power Recursion</h2>-->
+<!--    <form th:action="@{/dhruv/recursion}">-->
+<!--        <label>Exponent Power Value</label>-->
+<!--        <input type="number" min="1" max="100" th:name="pow" th:value="${pow}">-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+<!--    <p th:text="${finpow}"></p>-->
+
+
+
+
+</body>
+</html>

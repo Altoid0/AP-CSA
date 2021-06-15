@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertion | Dhruv</title>
+</head>
+<body>
+    <h1>Insertion Sort</h1>
+    <h2>Integer Sort</h2>
+    <p>This is a demonstration of insertion sort using Integer Values.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of numbers encased in square brackets and separated by commas ex. [2,9,123,46,17,56,63]</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="unsortarray" th:value="${unsortarray}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${unsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${sort}"></p>
+
+
+    <br>
+    <br>
+
+    <h2>String Sort</h2>
+    <p>This is a demonstration of insertion sort using String Values.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of random letters that are each separtead by a space ex. A G X G B S</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="strunsortarray" th:value="${strunsortarray}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${strunsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${strsort}"></p>
+
+
+
+    <br>
+    <br>
+
+    <h1>Bubble Sort</h1>
+    <h2>Integer Sort</h2>
+    <p>This is a demonstration of bubble sort using Integer Values.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of numbers encased in square brackets and separated by commas ex. [2,9,123,46,17,56,63]</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="bubbleunsort" th:value="${bubbleunsort}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${bubunsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${bubsort}"></p>
+
+
+    <br>
+    <br>
+
+    <h2>String Sort</h2>
+    <p>This is a demonstration of bubble sort using String Values.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of random letters that are each separtead by a space ex. A G X G B S</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="bubblestrunsort" th:value="${bubblestrunsort}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${bubstrunsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${bubstrsort}"></p>
+
+
+
+
+
+    <br>
+    <br>
+
+    <h1>Selection Sort</h1>
+    <h2>Integer Sort</h2>
+    <p>This is a demonstration of bubble sort using Integer Values.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of numbers encased in square brackets and separated by commas ex. [2,9,123,46,17,56,63]</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="selectionunsort" th:value="${selectionunsort}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${selecunsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${selecsort}"></p>
+
+
+    <br>
+    <br>
+
+    <h2>String Sort</h2>
+    <p>This is a demonstration of bubble sort using String Values.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of random letters that are each separtead by a space ex. A G X G B S</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="selectionstrunsort" th:value="${selectionstrunsort}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${selecstrunsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${selecstrsort}"></p>
+
+
+
+
+
+
+</body>
+</html>

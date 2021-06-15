@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linked List | Dhruv</title>
+</head>
+<body>
+  <h1>Linked Lists</h1>
+  <p>The following is an implementation of the Quick Sort sorting algorithm using Linked Lists. </p>
+  <p>Quick Sort has the time complexity of O(n^2) and the sorting algorithm example can be tested below</p>
+
+  <form th:action="@{/dhruv/linkedlist}">
+      <label>First Value</label>
+      <input type="number" min="2" max="100" th:name="val1" th:value="${val1}">
+
+      <label>Second Value</label>
+      <input type="number" min="2" max="100" th:name="val2" th:value="${val2}">
+
+      <label>Third Value</label>
+      <input type="number" min="2" max="100" th:name="val3" th:value="${val3}">
+
+      <label>Fourth Value</label>
+      <input type="number" min="2" max="100" th:name="val4" th:value="${val4}">
+
+      <label>Fifth Value</label>
+      <input type="number" min="2" max="100" th:name="val5" th:value="${val5}">
+
+      <label>Sixth Value</label>
+      <input type="number" min="2" max="100" th:name="val6" th:value="${val6}">
+
+      <input type="submit">
+  </form>
+
+  <p>Unsorted Array:</p>
+  <p th:text="${unsorted}"></p>
+
+  <p>Sorted Array:</p>
+  <p th:text="${sorted}"></p>
+
+  <div class="java-code">
+      <h1>Java Code</h1>
+      <script src="https://gist.github.com/DhruvK0/4354bedc79d8eefa63e9adef7bd19087.js"></script>
+  </div>
+
+  <style>
+
+      #line-graph{
+          width:50% !important;
+      }
+
+      .java-code{
+          width: 50% !important;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0%)
+      }
+
+      .java-code h1{
+          text-align: center;
+      }
+
+  </style>
+
+
+
+</body>
+</html>

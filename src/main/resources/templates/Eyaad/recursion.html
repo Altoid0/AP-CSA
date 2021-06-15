@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion | Eyaad</title>
+</head>
+<body>
+<div class="lab">
+    <h1>Recursion labs</h1>
+    <!-- <form id="factForm" action="/fac" method="GET">
+        <label for="num">This program will return the factorial of a number you put</label>
+        <input name="num" id="num" type="number" >
+        <button>Go!</button>
+    </form> -->
+    <h3>Factorial</h3>
+    <form th:action="@{/eyaad/recursion}">
+        <label>This program will return the factorial of a number you put</label>
+        <br>
+        <label>Enter Number</label>
+        <input type="number" min="1" max="100" th:name="num" th:value="${num}">
+        <input type="submit">
+    </form>
+    <p th:text="${numb}"></p>
+
+    <h3>Decimal to Binary</h3>
+    <form th:action="@{/eyaad/recursion}">
+        <label>This program will convert a decimal number to binary</label>
+        <br>
+        <label>Enter Binary</label>
+        <input type="number" min="1" max="1023" th:name="decimal" th:value="${decimal}">
+        <input type="submit">
+    </form>
+
+    <p th:text="${bin}"></p>
+
+    <h3>Greatest Common Factor Lab</h3>
+    <form th:action="@{/eyaad/recursion}">
+        <label>This program will find the greatest common factor of two numbers</label>
+        <br>
+        <label>Enter Number 1 here</label>
+        <input type="number" min="1" max="1023" th:name="num1" th:value="${num1}">
+        <br>
+        <label>Enter Number 2 here</label>
+        <input type="number" min="1" max="1023" th:name="num2" th:value="${num2}">
+        <br>
+        <input type="submit">
+    </form>
+
+    <p th:text="${greatest}"></p>
+    
+    <p th:text="${time}"></p>
+
+</div>
+</body>
+</html>

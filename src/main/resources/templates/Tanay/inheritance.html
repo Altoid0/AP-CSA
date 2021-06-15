@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Inheritance | Tanay</title>
+</head>
+<body>
+<div class="lab">
+  <h1>Inheritance Minilabs</h1>
+
+  <h3>Factorial</h3>
+  <form th:action="@{/tanay/inheritance}">
+    <label>Add a new sports car to the lot, supply its make, model, year, and top speed</label>
+    <input type="text" th:name="make" th:value="${make}">
+    <input type="text" th:name="model" th:value="${model}">
+    <input type="number" min="1900" max="2023" th:name="age" th:value="${age}">
+    <input type="number" min="1" max="300" th:name="topspeed" th:value="${topspeed}">
+    <input type="submit">
+  </form>
+    <p th:text="${cars}"></p>
+</div>
+
+</body>
+</html>

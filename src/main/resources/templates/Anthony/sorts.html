@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="anthony.css">
+    <meta charset="UTF-8">
+    <title>Sorts | Anthony</title>
+</head>
+
+<body>
+<h1>Variety of Sorts</h1>
+<p>This page shows three different types of sorts (bubble, selection, insertion) and their time efficiency.</p>
+
+<h2>Sort</h2>
+<form th:action="@{/anthony/sorts}">
+    <label>Enter a size, sorting method, and data type of a randomly generated array to sort.</label>
+    <br />
+    <p>Size: </p>
+    <input type="number" min="1" max="10" th:name="size" th:value="${size}">
+    <br />
+    <p>Sorting Method (1: Bubble, 2: Insertion, 3: Selection) </p>
+    <input type="number" min="1" max="3" th:name="mode" th:value="${mode}">
+    <br />
+    <p>Data Type (Integer, String, Champion; please use proper spelling and capitalization): </p>
+    <input type="text" th:name="type" th:value="${type}">
+    <br />
+    <input type="submit">
+</form>
+<p th:text="${original}"></p>
+<p th:text="${final}"></p>
+<p th:text="${time}"></p>
+
+</body>

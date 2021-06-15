@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertion | Eyaad</title>
+</head>
+<body>
+<div class="lab">
+    <h1>Insertion lab</h1>
+    <!-- <form id="factForm" action="/fac" method="GET">
+        <label for="num">This program will return the factorial of a number you put</label>
+        <input name="num" id="num" type="number" >
+        <button>Go!</button>
+    </form> -->
+    <h2>Insertion</h2>
+    <h3>Integers</h3>
+    <form th:action="@{/eyaad/insertion}">
+        <label>This program will take a length from the user, generate a random array of integers, and then sort it in increasing order</label>
+        <br>
+        <label>Length</label>
+        <input  th:name="length" th:value="${length}">
+        <input type="submit">
+    </form>
+    <p th:text="${unsorted}"></p>
+
+    <p th:text="${sorted}"></p>
+
+    <p th:text="${time}"></p>
+
+    <h3>Strings</h3>
+    <form th:action="@{/eyaad/insertion}">
+        <label>Enter a string array and this program will sort it alphabetically. Use this format: ["String1", "String2", "String3"]</label>
+        <br>
+        <label>Array</label>
+        <input type="text" th:name="array" th:value="${array}">
+        <input type="submit">
+    </form>
+    <p th:text="${notsorted}"></p>
+
+    <p th:text="${sorted2}"></p>
+
+    <p th:text="${time1}"></p>
+
+    <h3>Books</h3>
+    <p th:text="${bookunsorted}"></p>
+
+    <p th:text="${booksorted}"></p>
+
+</div>
+</body>
+</html>

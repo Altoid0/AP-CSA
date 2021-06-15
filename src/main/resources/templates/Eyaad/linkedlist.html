@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedList | Eyaad</title>
+</head>
+<body>
+<div class="lab">
+    <h1>LinkedList</h1>
+    <!-- <form id="factForm" action="/fac" method="GET">
+        <label for="num">This program will return the factorial of a number you put</label>
+        <input name="num" id="num" type="number" >
+        <button>Go!</button>
+    </form> -->
+    <form th:action="@{/eyaad/linkedlist}">
+        <p th:text="${list}"></p>
+        <br>
+        <label>You can add an integer to the head, tail, or middle of the LinkedList</label>
+        <br>
+        <label>Add to head</label>
+        <input type="number" min="1" max="100" th:name="num1" th:value="${num1}">
+        <input type="submit">
+        <br>
+        <label>Add to tail</label>
+        <input type="number" min="1" max="100" th:name="num2" th:value="${num2}">
+        <input type="submit">
+        <br>
+        <label>Add to middle</label>
+        <input type="number" min="1" max="100" th:name="num3" th:value="${num3}">
+        <input type="submit">
+        <br>
+        <br>
+        <label>You can also remove the head, tail, or middle of the LinkedList</label>
+        <br>
+        <label>Remove from head?(type in "yes" if so</label>
+        <input type="text" th:name="headdel" th:value="${headdel}">
+        <input type="submit">
+        <br>
+        <label>Remove from tail?(type in "yes" if so</label>
+        <input type="text" th:name="taildel" th:value="${taildel}">
+        <input type="submit">
+        <br>
+        <label>Remove from middle?(type in "yes" if so</label>
+        <input type="text" th:name="middledel" th:value="${middledel}">
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

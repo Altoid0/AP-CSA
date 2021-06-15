@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance | Nathan</title>
+</head>
+<body>
+
+    <h1>Inheritance</h1>
+
+    <p>Everything starts with the Consumable class. It is abstract and cannot be implemented</p>
+    <p>Hotdogs extend consumable, add data for condiment.</p>
+    <p>Chips extend consumable, add data for brand. Abstract and cannot be implemented</p>
+    <p>Plain chips extend chip, no extra params, set brand to generic</p>
+    <p>Doritos extend Chips. Add data for flavor</p>
+
+
+    <div class="data">
+        <table>
+            <tr>
+                <th>toString</th>
+                <th>Calories</th>
+            </tr>
+
+            <tr th:each="string: ${strings}">
+                <td th:text="${string}" />
+                <td th:text="${cals[stringStat.index]}" />
+            </tr>
+
+        </table>
+
+        <h2>Total Calories: <bold th:text="${totalCals}"></bold></h2>
+    </div>
+
+
+
+    <form th:action="@{/nathan/inheritance}">
+        <h2>Add Items to the lunchbox!</h2>
+        <label>hotdogs with relish</label>
+        <input name="hotdogsRelish" type="number" placeholder="hotdogs with relish" th:value="${hotdogsRelish}"><br>
+        <label>hotdogs with mustard</label>
+        <input name="hotdogsMustard" type="number" placeholder="hotdogs with mustard" th:value="${hotdogsMustard}"><br>
+        <label>plain chips</label>
+        <input name="plainChip" type="number" placeholder="plain chips" th:value="${plainChip}"><br>
+        <label>spicy doritos</label>
+        <input name="doritosSpicy" type="number" placeholder="spicy doritos" th:value="${doritosSpicy}"><br>
+        <label>cheesy doritos</label>
+        <input name="doritosCheesy" type="number" placeholder="cheesy doritos" th:value="${doritosCheesy}"><br>
+
+        <input type="submit" value="add item">
+    </form>
+
+
+    <img src="/diagram.svg">
+
+
+    <script src="https://gist.github.com/nathanielCherian/b703afcce3313a253415a7f8025789c9.js"></script>
+
+</body>
+
+
+<style>
+    form{
+        display: flex:
+        flex-direction: column;
+    }
+
+    .gist{
+        width: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        margin-top: 3%;
+    }
+
+    .data{
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td, th {
+      border: 1px solid #999;
+      padding: 0.5rem;
+      text-align: left;
+    }
+</style>
+</html>

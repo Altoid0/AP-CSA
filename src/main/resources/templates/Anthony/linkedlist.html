@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="anthony.css">
+    <meta charset="UTF-8">
+    <title>Linked Lists | Anthony</title>
+</head>
+
+<body>
+<h1>Linked Lists</h1>
+<p>A lab displaying the time complexity of linked lists vs. array lists.
+    <br />
+    <br />
+    Linked lists are a way to compile data into a list. Instead of setting aside space in memory during initialization like an array, linked lists are dynamic and do not utilize Java's Object class. Linked lists use primitive types and are thus more time efficient than array lists. They work by creating a series of nodes which point to each other. Said nodes can have their pointers changed in order to modify the list.
+</p>
+
+<h2>Arrays</h2>
+<p th:text="${arrayList}"></p>
+<p th:text="${linkedList}"></p>
+
+<form th:action="@{/anthony/linkedlist}">
+    <p>Position to change:</p>
+    <input type="number" min="0" max="9" th:name="index" th:value="${index}">
+    <br />
+    <p>Input a number to input</p>
+    <input type="number" min="1" max="100" th:name="number" th:value="${number}">
+    <br />
+    <p>Enter 1 for insertion, 2 for deletion </p>
+    <input type="number" min="1" max="2" th:name="mode" th:value="${mode}">
+    <br />
+    <input type="submit">
+</form>
+
+<p th:text="${time}"></p>
+</body>
