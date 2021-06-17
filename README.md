@@ -7,3 +7,9 @@ The entire project was made possible thanks to Sprint-Boot (A web framework desi
 
 # Scrum Plan
 We planned out each weeks work on our [**scrum board**](https://github.com/Altoid0/AP-CSA/projects/1). When making a project it is vital to have a plan to follow, this ensures that everyone stays busy and our deadlines can be met.
+
+# Comments
+The comment feature of our website relies on a database to store everyone's comment/reply and interacts with the frontend through the use of an API
+
+# Mini Labs
+Mini labs are small projects we completed through out the year and can be used as examples or points of reference for future students to learn from
